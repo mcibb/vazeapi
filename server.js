@@ -10,9 +10,8 @@ var express = require("express");
 
 var app = express();
 
-const host = "0.0.0.0";
-const port = process.env.PORT || 3000;
-app.listen(port, host, listening);
+
+var server = app.listen(process.env.PORT, '0.0.0.0');
 
 function listening() {
     console.log("listening");
