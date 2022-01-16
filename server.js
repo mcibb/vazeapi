@@ -10,12 +10,13 @@ var express = require("express");
 
 var app = express();
 
+const PORT = process.env.PORT || 3000;
 
-var server = app.listen(process.env.PORT, '0.0.0.0');
+app.listen(PORT, () => {
+    console.log("App running");
+});
 
-function listening() {
-    console.log("listening");
-}
+
 
 app.use(express.static("public"));
 
