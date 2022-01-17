@@ -43,14 +43,16 @@ function addText(request, response) {
     response.send(activities);
 }
 
-app.get("/all/:day", sendAll);
+app.get("/all/:day/:hour", sendAll);
 
 function sendAll(request, response) {
 
     let data = request.params;
     let day = data.day;
+    let hour = data.hour;
+    let dayArray = activities[day];
     
-    response.send(activities[day]);
+    response.send(dayArray[hour]);
 }
 
 app.get("/writejson", writeJSON);

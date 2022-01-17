@@ -12,7 +12,7 @@ const getUrl = "https://vazeapi.herokuapp.com/all/{0}";
 const putUrl = "https://vazeapi.herokuapp.com/add/{0}/{1}/{2}";
 
 
-
+/*
 for (i = 8; i < 20; i++){
 
     fetch(putUrl.format(0, i, "dačo"), {
@@ -30,7 +30,8 @@ for (i = 8; i < 20; i++){
         console.error("Error", error);
     })
 }
-
+*/
+/*
 function getData() {
 
     let lines = document.querySelectorAll(".hourLinesText");
@@ -54,7 +55,7 @@ function getData() {
      
 }
 
-
+*/
 
 
 var startJan = new Date(2022, 0, 1);
@@ -167,9 +168,28 @@ function dayPanelCreate(i, k) {
         hourLines.innerHTML += "<input type='text' class='hourLinesText' value='' style='max-width: 50vw';>";
     }
 
+    let lines = document.querySelectorAll(".hourLinesText");
     
+    for (l = 1; l < lines.length; l +=2) {
 
-    getData();
+        fetch(getUrl.format(i))
+            .then((response) => {
+                return response.json();
+            })
+            .then((data) => {
+                let hours = data;
+            
+                for (k = 8; k < 20; k++) {
+                    lines[l+1].value = hours[i];
+                }
+                    
+                
+            }
+                
+            );
+    }
+
+    
     hoverTime();
     
 
