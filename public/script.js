@@ -163,7 +163,9 @@ function dayPanelCreate(i, k) {
     dayPanel.innerHTML += "<div id='panelClose'></div>";
     dayPanel.innerHTML += "<div id='hourLines'></div>";
     let hourLines = document.querySelector("#hourLines");
-    for (i = 8; i < 20; i++) {
+
+    
+    for (x = 8; x < 20; x++) {
         hourLines.innerHTML += "<div class='hourLinesText' style='max-width: 5vw'>" + i + ":⁰⁰</div>";
         hourLines.innerHTML += "<input type='text' class='hourLinesText' value='' style='max-width: 50vw';>";
     }
