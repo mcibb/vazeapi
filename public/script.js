@@ -30,12 +30,15 @@ fetch(putUrl.format(0, 8, "dačo"), {
     console.error("Error", error);
 })
 
-
-fetch(getUrl.format(0))
-    .then(response => response.json())
-    .then(data => console.log(data));
-
-
+function getData( data ) {
+    
+    fetch(getUrl.format(0))
+        .then(response => response.json())
+        .then(data => data);
+    console.log(data);
+    
+    
+}
 var startJan = new Date(2022, 0, 1);
 var endJan = new Date(2022, 0, 31);
 var startFeb = new Date(2022, 1, 1);
@@ -134,9 +137,6 @@ function hoverTime() {
 
 
 
-
-
-
 //function to insert date, hours and close button into #dayPanel, then display it
 function dayPanelCreate(i, k) {
     dayPanel.innerHTML = "";
@@ -146,11 +146,16 @@ function dayPanelCreate(i, k) {
     let hourLines = document.querySelector("#hourLines");
     for (i = 8; i < 20; i++) {
         hourLines.innerHTML += "<div class='hourLinesText' style='max-width: 5vw'>" + i + ":⁰⁰</div>";
-        hourLines.innerHTML += "<input type='text' class='hourLinesText' style='max-width: 50vw'; />";
+        hourLines.innerHTML += "<input type='text' class='hourLinesText' value='' style='max-width: 50vw';>";
+    }
+
+    let lines = document.querySelectorAll(".hourLinesText");
+
+    for (i = 1; i < lines.length; i+=2) {
         
-        //div class='add'></div><div class='xt'></div>
-   
-    }    
+        lines[i].value = "  FFF";
+    }
+    
     hoverTime();
     
 
