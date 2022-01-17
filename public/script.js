@@ -8,8 +8,8 @@ String.prototype.format = function () {
     });
   };
 
-const getUrl = "https://vazeapi.herokuapp.com/all/{0}/{1}/{2}";
-const putUrl = "https://vazeapi.herokuapp.com/add/{0}";
+const getUrl = "https://vazeapi.herokuapp.com/all/{0}";
+const putUrl = "https://vazeapi.herokuapp.com/add/{0}/{1}/{2}";
 
 
 
