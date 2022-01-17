@@ -8,7 +8,7 @@ String.prototype.format = function () {
     });
   };
 
-const getUrl = "https://vazeapi.herokuapp.com/all/{0}";
+const getUrl = "https://vazeapi.herokuapp.com/all/{0}/{1}";
 const putUrl = "https://vazeapi.herokuapp.com/add/{0}/{1}/{2}";
 
 
@@ -170,17 +170,17 @@ function dayPanelCreate(i, k) {
 
     let lines = document.querySelectorAll(".hourLinesText");
     
-    for (l = 1; l < lines.length; l +=2) {
+    for (j = 8; j < 20; j ++) {
 
-        fetch(getUrl.format(i))
+        fetch(getUrl.format(i, j))
             .then((response) => {
                 return response.json();
             })
             .then((data) => {
                 let hours = data;
             
-                for (k = 8; k < 20; k++) {
-                    lines[l+1].value = hours[i];
+                for (l = 1; l < lines.length; l+=2) {
+                    lines[l].value = hours[j];
                 }
                     
                 
