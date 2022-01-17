@@ -35,6 +35,7 @@ function getData() {
     fetch(getUrl.format(0))
         .then(response => response.json())
         .then(data => {
+            console.log(data);
             return data;
         });
     
@@ -42,7 +43,7 @@ function getData() {
     
 }
 
-console.log(getData());
+getData();
 var startJan = new Date(2022, 0, 1);
 var endJan = new Date(2022, 0, 31);
 var startFeb = new Date(2022, 1, 1);
