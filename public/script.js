@@ -43,6 +43,8 @@ function getData() {
     
 }
 
+getData()
+.then(response => console.log(response));
 
 var startJan = new Date(2022, 0, 1);
 var endJan = new Date(2022, 0, 31);
@@ -156,12 +158,12 @@ function dayPanelCreate(i, k) {
 
     let lines = document.querySelectorAll(".hourLinesText");
 
-    
+    /*
     for (i = 1; i < lines.length; i+=2) {
         
         lines[i].value = getData()[i];
     }
-    
+    */
     hoverTime();
     
 
