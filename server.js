@@ -21,7 +21,7 @@ app.listen(PORT, "0.0.0.0", () => {
 
 app.use(express.static("public"));
 
-app.get("/add/:day/:hour/:text", addText);
+app.put("/add/:day/:hour/:text", addText);
 
 function addText(request, response) {
     let data = request.params;
