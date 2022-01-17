@@ -13,22 +13,23 @@ const putUrl = "https://vazeapi.herokuapp.com/add/{0}/{1}/{2}";
 
 
 
+for (i = 8; i < 20; i++){
 
-
-fetch(putUrl.format(0, 8, "dačo"), {
-    method: "PUT",
-    headers: {
-        "Content-Type": "application/json",
-    },
-    
-})
-.then(response => response.json())
-.then(data => {
-    console.log("success", data);
-})
-.catch((error) => {
-    console.error("Error", error);
-})
+    fetch(putUrl.format(0, i, "dačo"), {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log("success", data);
+    })
+    .catch((error) => {
+        console.error("Error", error);
+    })
+}
 
 function getData() {
 
