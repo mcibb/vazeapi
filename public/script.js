@@ -43,7 +43,7 @@ function getData() {
     
 }
 
-getData().then(response => console.log(response[i]));
+getData().then(response => console.log(response[0]));
 
 var startJan = new Date(2022, 0, 1);
 var endJan = new Date(2022, 0, 31);
