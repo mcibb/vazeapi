@@ -31,19 +31,26 @@ fetch(putUrl.format(0, 8, "dačo"), {
 })
 
 function getData() {
-    
+
+    let lines = document.querySelectorAll(".hourLinesText");
+
     fetch(getUrl.format(0))
-        .then(response => response.json())
-        .then(data => {
-            console.log(data);
-            return data;
-        });
-    
-    
-    
+        .then((response) => {
+            return response.json();
+        })
+        .then((data) => {
+            let hours = data;
+            for (i = 0; i < 12; i ++) {
+                lines[i+1].value = hours[i]
+            }
+        }
+            
+        );
+     
 }
 
-getData().then(response => console.log(response[0]));
+
+
 
 var startJan = new Date(2022, 0, 1);
 var endJan = new Date(2022, 0, 31);
@@ -155,14 +162,9 @@ function dayPanelCreate(i, k) {
         hourLines.innerHTML += "<input type='text' class='hourLinesText' value='' style='max-width: 50vw';>";
     }
 
-    let lines = document.querySelectorAll(".hourLinesText");
+    
 
-    /*
-    for (i = 1; i < lines.length; i+=2) {
-        
-        lines[i].value = getData()[i];
-    }
-    */
+    getData();
     hoverTime();
     
 
