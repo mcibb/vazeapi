@@ -178,11 +178,13 @@ function dayPanelCreate(i, k) {
             .then(response => console.log(response))
             .then(data => {
                 let hours = data;
-            
+                console.log(hours[j]);
+                console.log(lines[l]);
+            /*
                 for (l = 0; l < lines.length; l++) {
                     lines[l].value = hours[j];
                 }
-                    
+                  */  
                 
             }
                 
