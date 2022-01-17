@@ -32,7 +32,7 @@ fetch(putUrl.format(0, 8, "dačo"), {
 
 function getData() {
 
-    let lines = document.querySelectorAll(".hourLinesText");
+    
 
     fetch(getUrl.format(0))
         .then((response) => {
@@ -42,7 +42,7 @@ function getData() {
             let hours = data;
             console.log(hours);
             for (i = 0; i < 12; i ++) {
-                lines[i+1].value = hours[i]
+                lines[i+1].value = hours[i+8]
             }
         }
             
