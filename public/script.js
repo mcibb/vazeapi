@@ -1,5 +1,3 @@
-const { get } = require("express/lib/response");
-
 String.prototype.format = function () {
     
     var args = arguments;
