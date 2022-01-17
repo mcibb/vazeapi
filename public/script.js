@@ -32,7 +32,7 @@ fetch(putUrl.format(0, 8, "dačo"), {
 
 function getData() {
 
-    
+    let lines = document.querySelectorAll(".hourLinesText");
 
     fetch(getUrl.format(0))
         .then((response) => {
