@@ -21,7 +21,7 @@ fetch(url, {
     console.log("success", data);
 })
 .catch((error) => {
-    console.error("Error", error)
+    console.error("Error", error);
 })
 
 fetch(url)
