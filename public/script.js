@@ -173,10 +173,9 @@ function dayPanelCreate(i, k) {
     for (j = 8; j < 20; j ++) {
 
         fetch(getUrl.format(i, j))
-            .then((response) => {
-                return response.json()
+            .then(response => {response.json();
             })
-            .then((data) => {
+            .then(data => {
                 let hours = data;
             
                 for (l = 1; l < lines.length; l+=2) {
