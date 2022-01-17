@@ -1,3 +1,5 @@
+const { get } = require("express/lib/response");
+
 String.prototype.format = function () {
     
     var args = arguments;
@@ -43,7 +45,7 @@ function getData() {
     
 }
 
-getData();
+
 var startJan = new Date(2022, 0, 1);
 var endJan = new Date(2022, 0, 31);
 var startFeb = new Date(2022, 1, 1);
@@ -156,9 +158,10 @@ function dayPanelCreate(i, k) {
 
     let lines = document.querySelectorAll(".hourLinesText");
 
+    let lineValues = getData();
     for (i = 1; i < lines.length; i+=2) {
         
-        lines[i].value = "  FFF";
+        lines[i].value = lineValues[i];
     }
     
     hoverTime();
@@ -175,7 +178,6 @@ function dayPanelCreate(i, k) {
         dayPanel.style.display = "none";
     });
 }
-
 
 
 //On click, move the month clicked on the right side, create 2/3vw wide #dayPanel
