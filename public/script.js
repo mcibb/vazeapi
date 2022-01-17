@@ -1,14 +1,13 @@
 
 
 const getUrl = "https://vazeapi.herokuapp.com/all";
-const putUrl = "https://vazeapi.herokuapp.com/add/1/1/'halo halo'";
+const putUrl = "https://vazeapi.herokuapp.com/add/{0}/{1}/{2}";
 
 
 
 
-for (i = 0; i < 1; i++) {
-    let k = "yapp"
-fetch("https://vazeapi.herokuapp.com/add/i/8/k", {
+
+fetch(String.format(putUrl, 1,1, "yikers"), {
     method: "PUT",
     headers: {
         "Content-Type": "application/json",
@@ -22,7 +21,7 @@ fetch("https://vazeapi.herokuapp.com/add/i/8/k", {
 .catch((error) => {
     console.error("Error", error);
 })
-}
+
 
 fetch(getUrl)
     .then(response => response.json())
