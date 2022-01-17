@@ -41,11 +41,12 @@ function getData() {
         })
         .then((data) => {
             let hours = data;
-            console.log(hours);
+            
             for (i = 0; i < lines.length; i +=2) {
                 for (k = 8; k < 20; k++) {
                 lines[i+1].value = hours[i];
                 }
+                console.log(hours[i]);
             }
         }
             
