@@ -163,7 +163,7 @@ function dayPanelCreate(i, k) {
     dayPanel.innerHTML += "<div id='panelClose'></div>";
     dayPanel.innerHTML += "<div id='hourLines'></div>";
     let hourLines = document.querySelector("#hourLines");
-
+    console.log(i);
     
     for (x = 8; x < 20; x++) {
         hourLines.innerHTML += "<div class='hourLinesText' style='max-width: 5vw'>" + i + ":⁰⁰</div>";
@@ -171,7 +171,7 @@ function dayPanelCreate(i, k) {
     }
 
     let lines = document.querySelectorAll(".hourLinesText");
-    
+    /*
     for (j = 8; j < 20; j ++) {
 
         fetch(getUrl.format(i, j))
@@ -189,7 +189,7 @@ function dayPanelCreate(i, k) {
             );
     }
 
-    
+    */
     hoverTime();
     
 
