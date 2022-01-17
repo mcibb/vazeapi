@@ -10,11 +10,11 @@ const insert = {
 
 
 fetch(url, {
-    method: "POST",
+    method: "PUT",
     headers: {
         "Content-Type": "application/json",
     },
-    body:JSON.stringify(insert),
+    body: JSON.stringify(insert),
 })
 .then(response => response.json())
 .then(data => {
