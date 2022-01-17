@@ -171,7 +171,7 @@ function dayPanelCreate(i, k) {
     }
 
     let lines = document.querySelectorAll(".hourLinesText");
-    /*
+    
     for (j = 8; j < 20; j ++) {
 
         fetch(getUrl.format(i, j))
@@ -179,7 +179,7 @@ function dayPanelCreate(i, k) {
             .then(data => {
                 let hours = data;
             
-                for (l = 1; l < lines.length; l+=2) {
+                for (l = 0; l < lines.length; l++) {
                     lines[l].value = hours[j];
                 }
                     
@@ -189,7 +189,7 @@ function dayPanelCreate(i, k) {
             );
     }
 
-    */
+    
     hoverTime();
     
 
