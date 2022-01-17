@@ -8,8 +8,8 @@ String.prototype.format = function () {
     });
   };
 
-const getUrl = "https://vazeapi.herokuapp.com/all";
-const putUrl = "https://vazeapi.herokuapp.com/add/{0}/{1}/{2}";
+const getUrl = "https://vazeapi.herokuapp.com/all/{0}/{1}/{2}";
+const putUrl = "https://vazeapi.herokuapp.com/add/{0}/{1}";
 
 
 
@@ -31,7 +31,7 @@ fetch(putUrl.format(0, 8, "dačo"), {
 })
 
 
-fetch(getUrl)
+fetch(getUrl.format(0, 8))
     .then(response => response.json())
     .then(data => console.log(data));
 
