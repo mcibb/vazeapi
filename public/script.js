@@ -7,7 +7,7 @@ const putUrl = "https://vazeapi.herokuapp.com/add/{0}/{1}/{2}";
 
 
 
-fetch(putUrl, {
+fetch(putUrl, {}, {}, {}, {
     method: "PUT",
     headers: {
         "Content-Type": "application/json",
