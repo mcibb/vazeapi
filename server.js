@@ -21,14 +21,15 @@ app.listen(PORT, "0.0.0.0", () => {
 
 app.use(express.static("public"));
 
-app.get("/add/:day/:text", addText);
+app.get("/add/:day/:hour/:text", addText);
 
 function addText(request, response) {
     let data = request.params;
     let day = data.day;
+    let hour = data.hour;
     let text = data.text;
 
-    activities[day] = text;
+    activities[day[hour]] = text;
     let write = JSON.stringify(activities, null, 2);
     fs.writeFile("activities.json", write, finished);
 
@@ -36,11 +37,9 @@ function addText(request, response) {
         console.log("OK");
     }
 
-    let reply = {
-        msg: "Text inputted"
-    }
     
-    response.send(reply);
+    
+    response.send(activities);
 }
 
 app.get("/all", sendAll);

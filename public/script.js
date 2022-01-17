@@ -1,20 +1,17 @@
 
 
-const url = 'https://vazeapi.herokuapp.com/all';
-
-const insert = {
-    "0": {
-        "8": "yikers"
-    }
- }
+const getUrl = "https://vazeapi.herokuapp.com/all";
+const putUrl = "https://vazeapi.herokuapp.com/add/0/0/'halo halo'";
 
 
-fetch(url, {
+
+
+fetch(putUrl, {
     method: "PUT",
     headers: {
         "Content-Type": "application/json",
     },
-    body: JSON.stringify(insert),
+    
 })
 .then(response => response.json())
 .then(data => {
@@ -24,7 +21,7 @@ fetch(url, {
     console.error("Error", error);
 })
 
-fetch(url)
+fetch(getUrl)
     .then(response => response.json())
     .then(data => console.log(data));
 
