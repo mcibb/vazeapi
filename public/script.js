@@ -1,7 +1,7 @@
 
 
 const getUrl = "https://vazeapi.herokuapp.com/all";
-const putUrl = "https://vazeapi.herokuapp.com/add/0/0/'halo halo'";
+const putUrl = "https://vazeapi.herokuapp.com/add/1/1/'halo halo'";
 
 
 
