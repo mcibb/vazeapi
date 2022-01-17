@@ -156,10 +156,10 @@ function dayPanelCreate(i, k) {
 
     let lines = document.querySelectorAll(".hourLinesText");
 
-    let lineValues = getData();
+    
     for (i = 1; i < lines.length; i+=2) {
         
-        lines[i].value = lineValues[i];
+        lines[i].value = getData[i];
     }
     
     hoverTime();
