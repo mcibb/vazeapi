@@ -9,13 +9,13 @@ String.prototype.format = function () {
   };
 
 const getUrl = "https://vazeapi.herokuapp.com/all";
-const putUrl = "https://vazeapi.herokuapp.com/add";
+const putUrl = "https://vazeapi.herokuapp.com/add/{0}/{1}/{2}";
 
 
 
 
-for (i = 0; i < 3; i++) {
-fetch(putUrl + "/{0}/{1}/{2}", {
+
+fetch(putUrl, {
     method: "PUT",
     headers: {
         "Content-Type": "application/json",
@@ -29,7 +29,7 @@ fetch(putUrl + "/{0}/{1}/{2}", {
 .catch((error) => {
     console.error("Error", error);
 })
-}
+
 
 fetch(getUrl)
     .then(response => response.json())
