@@ -39,6 +39,8 @@ function getData( data ) {
     
     
 }
+
+getData();
 var startJan = new Date(2022, 0, 1);
 var endJan = new Date(2022, 0, 31);
 var startFeb = new Date(2022, 1, 1);
