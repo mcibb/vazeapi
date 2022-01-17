@@ -30,17 +30,19 @@ fetch(putUrl.format(0, 8, "dačo"), {
     console.error("Error", error);
 })
 
-function getData( data ) {
+function getData() {
     
     fetch(getUrl.format(0))
         .then(response => response.json())
-        .then(data => data);
-    console.log(data);
+        .then(data => {
+            return data;
+        });
+    
     
     
 }
 
-getData();
+console.log(getData());
 var startJan = new Date(2022, 0, 1);
 var endJan = new Date(2022, 0, 31);
 var startFeb = new Date(2022, 1, 1);
