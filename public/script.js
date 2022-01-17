@@ -159,7 +159,7 @@ function dayPanelCreate(i, k) {
     
     for (i = 1; i < lines.length; i+=2) {
         
-        lines[i].value = getData[i];
+        lines[i].value = getData()[i];
     }
     
     hoverTime();
