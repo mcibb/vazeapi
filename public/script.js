@@ -1,18 +1,28 @@
 
-/*
-fetch('https://mcibb.github.io/vaze/activities.json')
-  .then(res => res.json())
-  .then(data => {
-      console.log(JSON.stringify(data));
-      let all = JSON.stringify(data);
-      console.log(data["in"]);
-    //json vaiable contains object with data
-  })
-*/
 
 const url = 'https://vazeapi.herokuapp.com/all';
 
+const insert = {
+    "0": {
+        "8": "yikers"
+    }
+ }
 
+
+fetch(url, {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json",
+    },
+    body:JSON.stringify(insert),
+})
+.then(response => response.json())
+.then(data => {
+    console.log("success", data);
+})
+.catch((error) => {
+    console.error("Error", error)
+})
 
 fetch(url)
     .then(response => response.json())
