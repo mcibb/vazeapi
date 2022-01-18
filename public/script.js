@@ -220,7 +220,7 @@ function close(day) {
         for (line = 1; line < linesAfter.length; line +=2){
         
             if (isOdd(line)) {
-                let text = linesAfter[line].value;
+                let text = linesAfter[line];
                 putData(day, hour, text);
                 hour += 1;
             } else {
