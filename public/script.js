@@ -45,7 +45,7 @@ async function getData() {
 }
 
 function retDb() {
-    return Promise.resolve(db);
+    return Promise.resolve(getData());
 }
 
 console.log(retDb());
