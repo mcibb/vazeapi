@@ -25,9 +25,9 @@ app.get("/add/:day/:hour/:text", addText);
 
 function addText(request, response, day, hour, text) {
     let data = request.params;
-    day = data.day;
-    hour = data.hour;
-    text = data.text;
+    let day = data.day;
+    let hour = data.hour;
+    let text = data.text;
     let dayArray = activities[day];
 
     dayArray[hour] = text;
