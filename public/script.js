@@ -44,9 +44,11 @@ async function getData() {
     
 }
 
+function retDb() {
+    return Promise.resolve(db);
+}
 
-
-console.log(getData());
+console.log(retDb());
     
     
      
