@@ -48,6 +48,7 @@ async function retDb() {
     console.log(db);
 }
 
+retDb();
      
 
 
