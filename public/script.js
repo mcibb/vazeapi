@@ -9,7 +9,7 @@ String.prototype.format = function () {
   };
 
 const getUrl = "https://vazeapi.herokuapp.com/all";
-const putUrl = "https://vazeapi.herokuapp.com/add/{0}";
+const putUrl = "https://vazeapi.herokuapp.com/add/{0}/{1}/{2}";
 
 
 /*
