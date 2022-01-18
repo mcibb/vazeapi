@@ -175,20 +175,7 @@ async function retDb(lines, line, hour) {
 }
 function isOdd(num) { return num % 2;}
 
-function putData(day, hour, text) {
-    
-    fetch(putUrl.format(day, hour, text), {
-        method: "PUT",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        
-    })
-    .then(response => response.json())
-    .then(data => {
-        console.log("success", data);
-    });
-}
+
 
 //function to insert date, hours and close button into #dayPanel, then display it
 function dayPanelCreate(day, k) {
@@ -234,7 +221,7 @@ function close(day) {
         
             if (isOdd(line)) {
                 text = linesAfter[line].value;
-                putData(day, hour, text);
+                fetch(putUrl.format(day, hour, text));
                 hour += 1;
             } else {
                 continue;
