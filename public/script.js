@@ -42,7 +42,10 @@ async function getData() {
     return response.json();
 }
 
-const db = await getData();
+const db = async () => {
+    console.log(await getData());
+}
+
 console.log({db});
     
     
