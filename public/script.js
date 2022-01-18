@@ -44,11 +44,13 @@ async function getData() {
 }
 
 async function retDb() {
-    db = await getData();
-    console.log(db);
+    let ret = await getData();
+    return ret;
 }
 
-retDb();
+let db = retDb();
+
+console.log(db);
      
 
 
