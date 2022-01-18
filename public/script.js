@@ -250,8 +250,10 @@ for (let day = 0; day < dayButtons.length; day++) {
             table[2].style.transform = "translate(-200%, 0%)";
             months[0].style.transform = "translate(200%, 0%)";
             months[2].style.transform = "translate(-200%, 0%)";
+
+            let dayy = day;
             dayPanelCreate(day, k);
-            close(day);
+            close(dayy);
             
             
         } else if ( day > 30 && day < 59) {
@@ -263,7 +265,7 @@ for (let day = 0; day < dayButtons.length; day++) {
             months[2].style.transform = "translate(-200%, 0%)";
             months[0].style.transform = "translate(100%, 0%)";
             dayPanelCreate(day, k);
-            close(day);
+            close(dayy);
             
             
         } else if (day > 58) {
@@ -275,7 +277,7 @@ for (let day = 0; day < dayButtons.length; day++) {
             months[2].style.transform = "none";
             months[0].style.transform = "none";
             dayPanelCreate(day, k);
-            close(day);
+            close(dayy);
            
         };
     
