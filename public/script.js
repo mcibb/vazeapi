@@ -154,15 +154,15 @@ function hoverTime() {
 }}
 
 
-async function retDb(lines, line) {
+async function retDb(lines, line, hour) {
     let ret = await getData();
     let day = ret[i];
-    let hour = 8;
+    
     
     lines[line].value = day[hour];
     console.log(lines[line].value);
 
-    hour += 1;
+    
   
 
     
@@ -185,8 +185,9 @@ function dayPanelCreate(i, k) {
     let lines = document.querySelectorAll(".hourLinesText");
     
     for (line = 1; line < lines.length; line +=2){
-
-            retDb(lines, line);
+            let hour = 8
+            retDb(lines, line, hour);
+            hour += 1;
         
     }
     
