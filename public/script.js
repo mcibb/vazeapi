@@ -46,7 +46,7 @@ const db = async () => {
     console.log(await getData());
 }
 
-console.log(db);
+console.log(db());
     
     
     
