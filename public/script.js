@@ -185,7 +185,9 @@ function dayPanelCreate(day, k) {
     dayPanel.innerHTML += "<div id='hourLines'></div>";
     let hourLines = document.querySelector("#hourLines");
     console.log(day);
-    
+    let dayy = day;
+    console.log(dayy);
+
     for (x = 8; x < 20; x++) {
         hourLines.innerHTML += "<div class='hourLinesText' style='max-width: 5vw'>" + x + ":⁰⁰</div>";
         hourLines.innerHTML += "<input type='text' class='hourLinesText' value='' style='max-width: 50vw';>";
@@ -209,6 +211,7 @@ function dayPanelCreate(day, k) {
     
     
     dayPanel.style.display = "grid";
+    close(dayy);
     
 }
 
@@ -253,7 +256,7 @@ for (let day = 0; day < dayButtons.length; day++) {
 
             
             dayPanelCreate(day, k);
-            close(dayy);
+            
             
             
         } else if ( day > 30 && day < 59) {
@@ -265,7 +268,7 @@ for (let day = 0; day < dayButtons.length; day++) {
             months[2].style.transform = "translate(-200%, 0%)";
             months[0].style.transform = "translate(100%, 0%)";
             dayPanelCreate(day, k);
-            close(dayy);
+            
             
             
         } else if (day > 58) {
@@ -277,7 +280,7 @@ for (let day = 0; day < dayButtons.length; day++) {
             months[2].style.transform = "none";
             months[0].style.transform = "none";
             dayPanelCreate(day, k);
-            close(dayy);
+            
            
         };
     
