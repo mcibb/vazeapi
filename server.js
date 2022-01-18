@@ -31,7 +31,7 @@ function addText(request, response) {
     let dayArray = activities[day];
 
     dayArray[hour] = text;
-    let write = JSON.stringify(activities[day], null, 2);
+    let write = JSON.stringify(dayArray[hour], null, 2);
     fs.writeFile("activities.json", write, finished);
 
     function finished(err) {
