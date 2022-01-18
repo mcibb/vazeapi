@@ -209,12 +209,13 @@ function dayPanelCreate(day, k) {
     
     
     dayPanel.style.display = "grid";
-    panelClose.addEventListener("click", function(day, lines) {
+    panelClose.addEventListener("click", function(day) {
+        let linesAfter = document.querySelectorAll(".hourLinesText");
         hour = 8;
-        for (line = 1; line < lines.length; line +=2){
+        for (line = 1; line < linesAfter.length; line +=2){
         
             if (isOdd(line)) {
-                let text = lines[line].value;
+                let text = linesAfter[line].value;
                 putData(day, hour, text);
                 hour += 1;
             } else {
