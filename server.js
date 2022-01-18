@@ -27,10 +27,10 @@ function addText(request, response) {
     let data = request.params;
     let day = data.day;
     let hour = data.hour;
-    let text = data.text;
+    
     let dayArray = activities[day];
 
-    dayArray[hour] = text;
+    dayArray[hour] = data.text;
     let write = JSON.stringify(activities, null, 2);
     fs.writeFile("activities.json", write, finished);
 
