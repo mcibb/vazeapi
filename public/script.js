@@ -48,7 +48,7 @@ const retDb = async () => {
     
 }
 
-console.log(retDb());
+retDb();
     
     
     
