@@ -23,7 +23,7 @@ app.use(express.static("public"));
 
 app.get("/add/:day/:hour/:text", addText);
 
-function addText(request, response, day, hour, text) {
+function addText(request, response) {
     let data = request.params;
     let day = data.day;
     let hour = data.hour;
