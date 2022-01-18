@@ -211,7 +211,7 @@ function dayPanelCreate(day, k) {
     
     
     dayPanel.style.display = "grid";
-    close(dayy);
+    
     
 }
 
@@ -243,11 +243,13 @@ function close(day) {
     });
 }
 //On click, move the month clicked on the right side, create 2/3vw wide #dayPanel
-
+let opening = false;
+let dayy = 0;
 for (let day = 0; day < dayButtons.length; day++) {
     dayButtons[day].addEventListener("click", function() {
         let k = "";
-        let dayy = day;
+        
+        dayy = day;
         if ( day < 31 ) {
             k = "Január 2022";
             table[0].style.transform = "translate(200%, 0%)";
@@ -285,7 +287,7 @@ for (let day = 0; day < dayButtons.length; day++) {
            
         };
     
-        
+        close(dayy);
         
     });
     
