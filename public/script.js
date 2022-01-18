@@ -38,17 +38,19 @@ let db = {};
 
 async function getData() {
     const response = await fetch(getUrl);
-
+    
     return response.json();
 }
-
+/*
 const retDb = async () => {
     db = await getData();
     
     
 }
 retDb();
+*/
 
+let db = getData();
 console.log(db);
     
     
