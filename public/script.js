@@ -161,7 +161,10 @@ async function retDb(lines, line, hour) {
     
     
     lines[line].value = day[hour];
-    console.log(lines[line]);
+    if (isOdd(line)) {
+        console.log(lines[line]);
+    }
+    
 
     
   
