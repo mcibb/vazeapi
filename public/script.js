@@ -226,7 +226,7 @@ function close(dayy) {
             
             if (isOdd(line)) {
                 text = linesAfter[line].value;
-                fetch(putUrl.format(dayy, time, text));
+                fetch(putUrl.format(dayButtons[dayy], time, text));
                 time += 1;
             } else {
                 continue;
