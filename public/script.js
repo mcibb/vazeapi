@@ -209,7 +209,7 @@ function dayPanelCreate(day, k) {
     
     
     dayPanel.style.display = "grid";
-    panelClose.addEventListener("click", function(day) {
+    panelClose.addEventListener("click", function(day, lines) {
         hour = 8;
         for (line = 1; line < lines.length; line +=2){
         
