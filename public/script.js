@@ -62,6 +62,8 @@ const week = ["Po", "Ut", "St", "Št", "Pi", "So", "Ne"];
 const semester = [[], [], []];
 const startEnd = [[startJan, endJan], [startFeb, endFeb], [startMar, endMar]];
 
+let text = "";
+
 for (let i = 0; i < 3; i++) {
     
     
