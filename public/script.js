@@ -212,11 +212,12 @@ function dayPanelCreate(day, k) {
     
     dayPanel.style.display = "grid";
     
+    close(dayy);
     
 }
 
-function close(day) {
-    console.log(day);
+function close(dayy) {
+    console.log(dayy);
     let linesAfter = document.querySelectorAll(".hourLinesText");
     panelClose.addEventListener("click", function() {
         
@@ -225,7 +226,7 @@ function close(day) {
             
             if (isOdd(line)) {
                 text = linesAfter[line].value;
-                fetch(putUrl.format(day, time, text));
+                fetch(putUrl.format(dayy, time, text));
                 time += 1;
             } else {
                 continue;
@@ -249,7 +250,7 @@ for (let day = 0; day < dayButtons.length; day++) {
     dayButtons[day].addEventListener("click", function() {
         let k = "";
         
-        dayy = day;
+        
         if ( day < 31 ) {
             k = "Január 2022";
             table[0].style.transform = "translate(200%, 0%)";
@@ -287,7 +288,7 @@ for (let day = 0; day < dayButtons.length; day++) {
            
         };
     
-        close(dayy);
+        
         
     });
     
