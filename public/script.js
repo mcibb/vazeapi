@@ -160,7 +160,7 @@ async function retDb(lines, line, hour) {
     
     
     lines[line].value = day[hour];
-    console.log(lines[line].value);
+    console.log(lines[line]);
 
     
   
@@ -185,7 +185,7 @@ function dayPanelCreate(i, k) {
     let lines = document.querySelectorAll(".hourLinesText");
     
     for (line = 2; line < lines.length; line +=2){
-            let hour = 8
+            let hour = 8;
             retDb(lines, line, hour);
             hour += 1;
         
