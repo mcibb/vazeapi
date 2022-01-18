@@ -216,6 +216,7 @@ function dayPanelCreate(day, k) {
 }
 
 function close(day) {
+    console.log(day);
     let linesAfter = document.querySelectorAll(".hourLinesText");
     panelClose.addEventListener("click", function() {
         
