@@ -45,6 +45,7 @@ async function getData() {
 
 async function retDb() {
     db = await getData();
+    console.log(db);
 }
 
      
