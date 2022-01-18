@@ -187,9 +187,6 @@ function putData(day, hour, text) {
     .then(response => response.json())
     .then(data => {
         console.log("success", data);
-    })
-    .catch((error) => {
-        console.error("Error", error)
     });
 }
 
