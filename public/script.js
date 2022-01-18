@@ -160,7 +160,7 @@ async function retDb(lines, line) {
     let hour = 8;
     
     lines[line].value = day[hour];
-    console.log(lines[line]).value;
+    console.log(lines[line].value);
 
     hour += 1;
   
