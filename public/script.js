@@ -221,8 +221,7 @@ function close(day) {
         
             if (isOdd(line)) {
                 text = linesAfter[line].value;
-                console.log(text);
-                //putData(day, hour, text);
+                putData(day, hour, text);
                 hour += 1;
             } else {
                 continue;
