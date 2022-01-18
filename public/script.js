@@ -45,7 +45,7 @@ async function getData() {
 const retDb = async () => {
     let db = await getData();
     console.log(db);
-    return db;
+    
 }
 
 console.log(retDb());
