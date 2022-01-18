@@ -180,7 +180,7 @@ async function putData(day, hour, text) {
 //function to insert date, hours and close button into #dayPanel, then display it
 function dayPanelCreate(day, k) {
     dayPanel.innerHTML = "";
-    dayPanel.innerHTML += "<p class='panelTitleText'>" +dayButtons[i].textContent+ ". " + k + "</p>";
+    dayPanel.innerHTML += "<p class='panelTitleText'>" +dayButtons[day].textContent+ ". " + k + "</p>";
     dayPanel.innerHTML += "<div id='panelClose'></div>";
     dayPanel.innerHTML += "<div id='hourLines'></div>";
     let hourLines = document.querySelector("#hourLines");
@@ -209,13 +209,13 @@ function dayPanelCreate(day, k) {
     
     
     dayPanel.style.display = "grid";
-    panelClose.addEventListener("click", function(i) {
+    panelClose.addEventListener("click", function(day) {
         hour = 8;
         for (line = 1; line < lines.length; line +=2){
         
             if (isOdd(line)) {
                 let text = lines[line].value;
-                putData(i, hour, text);
+                putData(day, hour, text);
                 hour += 1;
             } else {
                 continue;
