@@ -243,7 +243,7 @@ function close(day) {
 for (let day = 0; day < dayButtons.length; day++) {
     dayButtons[day].addEventListener("click", function() {
         let k = "";
-        
+        let dayy = day;
         if ( day < 31 ) {
             k = "Január 2022";
             table[0].style.transform = "translate(200%, 0%)";
@@ -251,7 +251,7 @@ for (let day = 0; day < dayButtons.length; day++) {
             months[0].style.transform = "translate(200%, 0%)";
             months[2].style.transform = "translate(-200%, 0%)";
 
-            let dayy = day;
+            
             dayPanelCreate(day, k);
             close(dayy);
             
