@@ -168,7 +168,7 @@ async function retDb(lines, line, hour) {
 
     
 }
-const isOdd = function(line) { return line & 1; };
+function isOdd(num) { return num % 2;}
 
 //function to insert date, hours and close button into #dayPanel, then display it
 function dayPanelCreate(i, k) {
