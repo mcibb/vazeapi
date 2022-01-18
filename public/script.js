@@ -174,7 +174,13 @@ async function retDb(lines, line, hour) {
 function isOdd(num) { return num % 2;}
 
 async function putData(day, hour, text) {
-    await fetch(putUrl.format(day, hour, text));
+    await fetch(putUrl.format(day, hour, text), {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        
+    });
 }
 
 //function to insert date, hours and close button into #dayPanel, then display it
