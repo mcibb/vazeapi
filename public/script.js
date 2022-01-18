@@ -9,7 +9,7 @@ String.prototype.format = function () {
   };
 
 const getUrl = "https://vazeapi.herokuapp.com/all";
-const putUrl = "https://vazeapi.herokuapp.com/add/{0}/{1}/{2}";
+const putUrl = "https://vazeapi.herokuapp.com/add/{0}";
 
 
 /*
@@ -35,13 +35,6 @@ for (i = 8; i < 20; i++){
 
 
 
-
-async function getData() {
-    let response = await fetch(getUrl);
-
-    return response.json();
-    
-}
 
 
 
@@ -154,6 +147,13 @@ function hoverTime() {
 }}
 
 
+async function getData() {
+    let response = await fetch(getUrl);
+
+    return response.json();
+    
+}
+
 async function retDb(lines, line, hour) {
     let ret = await getData();
     let day = ret[i];
@@ -172,6 +172,10 @@ async function retDb(lines, line, hour) {
     
 }
 function isOdd(num) { return num % 2;}
+
+async function putData(i, hour, text) {
+    await fetch(putUrl.format(i, hour, text));
+}
 
 //function to insert date, hours and close button into #dayPanel, then display it
 function dayPanelCreate(i, k) {
@@ -203,9 +207,22 @@ function dayPanelCreate(i, k) {
     
     hoverTime();
     
-
+    
     dayPanel.style.display = "grid";
     panelClose.addEventListener("click", function() {
+        hour = 8;
+        for (line = 1; line < lines.length; line +=2){
+        
+            if (isOdd(line)) {
+                let text = lines[line].value;
+                putData(i, hour, text);
+                hour += 1;
+            } else {
+                continue;
+            }
+    
+            
+        }
         table[0].style.transform = "none";
         table[1].style.transform = "none";
         table[2].style.transform = "none";
