@@ -38,17 +38,13 @@ for (i = 8; i < 20; i++){
 
 async function getData() {
     let response = await fetch(getUrl);
-    let db = await response.json();
-    
-    return db;
+
+    return response.json();
     
 }
 
-function retDb() {
-    return Promise.resolve(getData());
-}
-
-console.log(retDb());
+let db = getData();
+console.log({ db });
     
     
      
