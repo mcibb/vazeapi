@@ -173,18 +173,18 @@ async function retDb(lines, line, hour) {
 }
 function isOdd(num) { return num % 2;}
 
-async function putData(i, hour, text) {
-    await fetch(putUrl.format(i, hour, text));
+async function putData(day, hour, text) {
+    await fetch(putUrl.format(day, hour, text));
 }
 
 //function to insert date, hours and close button into #dayPanel, then display it
-function dayPanelCreate(i, k) {
+function dayPanelCreate(day, k) {
     dayPanel.innerHTML = "";
     dayPanel.innerHTML += "<p class='panelTitleText'>" +dayButtons[i].textContent+ ". " + k + "</p>";
     dayPanel.innerHTML += "<div id='panelClose'></div>";
     dayPanel.innerHTML += "<div id='hourLines'></div>";
     let hourLines = document.querySelector("#hourLines");
-    console.log(i);
+    console.log(day);
     
     for (x = 8; x < 20; x++) {
         hourLines.innerHTML += "<div class='hourLinesText' style='max-width: 5vw'>" + x + ":⁰⁰</div>";
@@ -236,21 +236,21 @@ function dayPanelCreate(i, k) {
 
 //On click, move the month clicked on the right side, create 2/3vw wide #dayPanel
 
-for (let i = 0; i < dayButtons.length; i++) {
-    dayButtons[i].addEventListener("click", function() {
+for (let day = 0; day < dayButtons.length; day++) {
+    dayButtons[day].addEventListener("click", function() {
         let k = "";
         
-        if ( i < 31 ) {
+        if ( day < 31 ) {
             k = "Január 2022";
             table[0].style.transform = "translate(200%, 0%)";
             table[2].style.transform = "translate(-200%, 0%)";
             months[0].style.transform = "translate(200%, 0%)";
             months[2].style.transform = "translate(-200%, 0%)";
-            dayPanelCreate(i, k);
+            dayPanelCreate(day, k);
             
             
             
-        } else if ( i > 30 && i < 59) {
+        } else if ( day > 30 && day < 59) {
             k = "Február 2022";
             table[1].style.transform = "translate(100%, 0%)";
             table[2].style.transform = "translate(-200%, 0%)";
@@ -258,10 +258,10 @@ for (let i = 0; i < dayButtons.length; i++) {
             months[1].style.transform = "translate(100%, 0%)";
             months[2].style.transform = "translate(-200%, 0%)";
             months[0].style.transform = "translate(100%, 0%)";
-            dayPanelCreate(i, k);
+            dayPanelCreate(day, k);
             
             
-        } else if (i > 58) {
+        } else if (day > 58) {
             k = "Marec 2022";
             table[1].style.transform = "none";
             table[2].style.transform = "none";
@@ -269,7 +269,7 @@ for (let i = 0; i < dayButtons.length; i++) {
             months[1].style.transform = "none";
             months[2].style.transform = "none";
             months[0].style.transform = "none";
-            dayPanelCreate(i, k);
+            dayPanelCreate(day, k);
            
         };
     
