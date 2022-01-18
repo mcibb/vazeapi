@@ -33,28 +33,18 @@ for (i = 8; i < 20; i++){
 */
 
 
-
+let db;
 
 
 async function getData() {
-    const response = await fetch(getUrl);
-    
-    return response.json();
-}
-
-const retDb = async () => {
-    const response =  await getData();
-
-    return response;
-    
+    let response = await fetch(getUrl);
+    db = await response.json();
     
 }
 
+getData();
 
-
-let db = retDb();
 console.log(db);
-    
     
     
      
