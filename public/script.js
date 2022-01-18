@@ -43,13 +43,9 @@ async function getData() {
     
 }
 
-async function retDb() {
-    let ret = await getData();
-    
-    console.log(ret[1]);
-}
 
-retDb();
+
+
 
      
 
@@ -158,6 +154,19 @@ function hoverTime() {
 }}
 
 
+async function retDb(lines, line) {
+    let ret = await getData();
+    let day = ret[i];
+    let hour = 8;
+    
+    lines[line].value = day[hour];
+    console.log(lines[line]).value;
+
+    hour += 1;
+  
+
+    
+}
 
 //function to insert date, hours and close button into #dayPanel, then display it
 function dayPanelCreate(i, k) {
@@ -174,6 +183,12 @@ function dayPanelCreate(i, k) {
     }
 
     let lines = document.querySelectorAll(".hourLinesText");
+    
+    for (line = 1; line < lines.length; line +=2){
+
+            retDb(lines, line);
+        
+    }
     
     hoverTime();
     
