@@ -42,12 +42,13 @@ async function getData() {
     return response.json();
 }
 
-const db = async () => {
-    console.log(await getData());
-    return await getData();
+const retDb = async () => {
+    let db = await getData();
+    console.log(db);
+    return db;
 }
 
-console.log(db());
+console.log(retDb());
     
     
     
