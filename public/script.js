@@ -44,7 +44,7 @@ async function getData() {
 }
 
 let db = getData();
-console.log({ db });
+console.log(db);
     
     
      
