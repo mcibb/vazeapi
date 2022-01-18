@@ -47,7 +47,7 @@ const retDb = async () => {
     
     
 }
-
+retDb();
 
 console.log(db);
     
