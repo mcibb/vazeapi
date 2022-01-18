@@ -8,7 +8,7 @@ String.prototype.format = function () {
     });
   };
 
-const getUrl = "https://vazeapi.herokuapp.com/all/{0}/{1}";
+const getUrl = "https://vazeapi.herokuapp.com/all";
 const putUrl = "https://vazeapi.herokuapp.com/add/{0}/{1}/{2}";
 
 
@@ -31,33 +31,32 @@ for (i = 8; i < 20; i++){
     })
 }
 */
-/*
-function getData() {
 
-    let lines = document.querySelectorAll(".hourLinesText");
 
-    fetch(getUrl.format(0))
-        .then((response) => {
-            return response.json();
-        })
-        .then((data) => {
-            let hours = data;
-            
-            for (i = 0; i < lines.length; i +=2) {
-                for (k = 8; k < 20; k++) {
-                lines[i+1].value = hours[i];
-                }
-                console.log(hours[i]);
-            }
-        }
-            
-        );
-     
+
+let lines = document.querySelectorAll(".hourLinesText");
+
+async function getData() {
+    const response = await fetch(getUrl);
+
+    return response.json();
 }
 
+const db = await getData();
+console.log({db});
+    
+    
+    
+     
+
+
+/*
+.then(response => response.json())
+    .then(data => {
+        console.log("success", data);
+        })
+            
 */
-
-
 var startJan = new Date(2022, 0, 1);
 var endJan = new Date(2022, 0, 31);
 var startFeb = new Date(2022, 1, 1);
@@ -171,30 +170,6 @@ function dayPanelCreate(i, k) {
     }
 
     let lines = document.querySelectorAll(".hourLinesText");
-    
-    for (j = 8; j < 20; j ++) {
-
-        fetch(getUrl.format(i, j))
-            .then(response => console.log(response))
-            .then(data => {
-                let hours = data;
-
-                
-
-                console.log(hours.map());
-                console.log(lines[l]);
-            
-            /*
-                for (l = 0; l < lines.length; l++) {
-                    lines[l].value = hours[j];
-                }
-                  */  
-                
-            }
-                
-            );
-    }
-
     
     hoverTime();
     
