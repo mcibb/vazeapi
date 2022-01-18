@@ -43,12 +43,12 @@ async function getData() {
 }
 
 const retDb = async () => {
-    db = await getData();
-    return db;
+    await getData();
+    
     
 }
 
-retDb();
+let db = retDb();
 
 console.log(db);
     
