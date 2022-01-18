@@ -158,7 +158,7 @@ async function retDb(lines, line, hour) {
     let ret = await getData();
     let day = ret[i];
 
-    let lines = document.querySelectorAll(".hourLinesText");
+    
     
     lines[line].value = day[hour];
     console.log(lines[line]);
