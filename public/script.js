@@ -184,7 +184,7 @@ function dayPanelCreate(i, k) {
 
     let lines = document.querySelectorAll(".hourLinesText");
     
-    for (line = 2; line < lines.length; line +=2){
+    for (line = 1; line < lines.length; line +=2){
             let hour = 8;
             retDb(lines, line, hour);
             hour += 1;
