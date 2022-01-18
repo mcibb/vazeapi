@@ -216,13 +216,13 @@ function close(day) {
     let linesAfter = document.querySelectorAll(".hourLinesText");
     panelClose.addEventListener("click", function() {
         
-        hour = 8;
+        time = 8;
         for (line = 1; line < linesAfter.length; line +=2){
-        
+            
             if (isOdd(line)) {
                 text = linesAfter[line].value;
-                fetch(putUrl.format(day, hour, text));
-                hour += 1;
+                fetch(putUrl.format(day, time, text));
+                time += 1;
             } else {
                 continue;
             }
