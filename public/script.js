@@ -178,13 +178,13 @@ function dayPanelCreate(i, k) {
     console.log(i);
     
     for (x = 8; x < 20; x++) {
-        hourLines.innerHTML += "<div class='hourLinesText' style='max-width: 5vw'>" + i + ":⁰⁰</div>";
+        hourLines.innerHTML += "<div class='hourLinesText' style='max-width: 5vw'>" + x + ":⁰⁰</div>";
         hourLines.innerHTML += "<input type='text' class='hourLinesText' value='' style='max-width: 50vw';>";
     }
 
     let lines = document.querySelectorAll(".hourLinesText");
     
-    for (line = 1; line < lines.length; line +=2){
+    for (line = 2; line < lines.length; line +=2){
             let hour = 8
             retDb(lines, line, hour);
             hour += 1;
