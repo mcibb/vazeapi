@@ -188,7 +188,7 @@ function dayPanelCreate(i, k) {
     let hour = 8;
     for (line = 1; line < lines.length; line +=2){
         
-        if (line.isOdd) {
+        if (isOdd(line)) {
             retDb(lines, line, hour);
             hour += 1;
         } else {
