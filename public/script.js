@@ -43,10 +43,10 @@ async function getData() {
     
 }
 
-let db = getData();
-console.log(db);
-    
-    
+async function retDb() {
+    db = await getData();
+}
+
      
 
 
