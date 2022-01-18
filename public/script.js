@@ -209,8 +209,13 @@ function dayPanelCreate(day, k) {
     
     
     dayPanel.style.display = "grid";
-    panelClose.addEventListener("click", function(day) {
-        let linesAfter = document.querySelectorAll(".hourLinesText");
+    
+}
+
+function close(day) {
+    let linesAfter = document.querySelectorAll(".hourLinesText");
+    panelClose.addEventListener("click", function() {
+        
         hour = 8;
         for (line = 1; line < linesAfter.length; line +=2){
         
@@ -233,8 +238,6 @@ function dayPanelCreate(day, k) {
         dayPanel.style.display = "none";
     });
 }
-
-
 //On click, move the month clicked on the right side, create 2/3vw wide #dayPanel
 
 for (let day = 0; day < dayButtons.length; day++) {
@@ -248,7 +251,7 @@ for (let day = 0; day < dayButtons.length; day++) {
             months[0].style.transform = "translate(200%, 0%)";
             months[2].style.transform = "translate(-200%, 0%)";
             dayPanelCreate(day, k);
-            
+            close(day);
             
             
         } else if ( day > 30 && day < 59) {
@@ -260,6 +263,7 @@ for (let day = 0; day < dayButtons.length; day++) {
             months[2].style.transform = "translate(-200%, 0%)";
             months[0].style.transform = "translate(100%, 0%)";
             dayPanelCreate(day, k);
+            close(day);
             
             
         } else if (day > 58) {
@@ -271,6 +275,7 @@ for (let day = 0; day < dayButtons.length; day++) {
             months[2].style.transform = "none";
             months[0].style.transform = "none";
             dayPanelCreate(day, k);
+            close(day);
            
         };
     
