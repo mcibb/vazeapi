@@ -173,13 +173,21 @@ async function retDb(lines, line, hour) {
 }
 function isOdd(num) { return num % 2;}
 
-async function putData(day, hour, text) {
-    await fetch(putUrl.format(day, hour, text), {
+function putData(day, hour, text) {
+    
+    fetch(putUrl.format(day, hour, text), {
         method: "PUT",
         headers: {
             "Content-Type": "application/json",
         },
         
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log("success", data);
+    })
+    .catch((error) => {
+        console.error("Error", error);
     });
 }
 
