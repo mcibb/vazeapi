@@ -32,7 +32,7 @@ for (i = 8; i < 20; i++){
 }
 */
 
-
+let db = {};
 
 
 
@@ -43,12 +43,11 @@ async function getData() {
 }
 
 const retDb = async () => {
-    return await getData();
+    db = await getData();
     
     
 }
 
-let db = retDb();
 
 console.log(db);
     
