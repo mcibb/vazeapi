@@ -34,7 +34,7 @@ for (i = 8; i < 20; i++){
 
 
 
-let lines = document.querySelectorAll(".hourLinesText");
+
 
 async function getData() {
     const response = await fetch(getUrl);
@@ -44,6 +44,7 @@ async function getData() {
 
 const db = async () => {
     console.log(await getData());
+    return await getData();
 }
 
 console.log(db());
