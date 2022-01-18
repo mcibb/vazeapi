@@ -33,18 +33,20 @@ for (i = 8; i < 20; i++){
 */
 
 
-let db;
+
 
 
 async function getData() {
     let response = await fetch(getUrl);
-    db = await response.json();
+    let db = await response.json();
+    
+    return db;
     
 }
 
-getData();
 
-console.log(db);
+
+console.log(getData());
     
     
      
