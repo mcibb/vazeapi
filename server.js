@@ -29,12 +29,18 @@ function addText(request, response) {
     let day = data.day;
     let hour = data.hour;
     let text = data.text;
-    let days = activities[month];
-    let hours = days[day];
+    let actArray = [activities];
+    
+    let months = _.flatMap(actArray.values);
+    /*
+    let hours = _.flatMap(months.values);
     
     
     hours[hour] = text;
-    
+    */
+
+    console.log(actArray);
+    console.log(months);
     let write = JSON.stringify(activities, null, 2);
     fs.writeFile("activities.json", write, finished);
 
