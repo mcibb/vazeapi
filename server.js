@@ -30,7 +30,7 @@ function addText(request, response) {
     let hour = data.hour;
     let text = data.text;
     
-    activities[month[{day:hour}]] = text
+    activities[{month: {day:hour}}] = text
     
     let write = JSON.stringify(activities, null, 2);
     fs.writeFile("activities.json", write, finished);
