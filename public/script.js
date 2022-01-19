@@ -76,20 +76,22 @@ for (let i = 0; i < 3; i++) {
 
 
 // Display months, weekdays and days 
-for (let k = 0; k <3; k++) {
+for (let f = 0; f <3; f++) {
 
     let weekDay = [6, 2, 2];
     
 
     for (let l = 0; l <7; l++) {
-            table[k].innerHTML += "<p class='weekDay'>" + week[l] + "</p>";
+            table[f].innerHTML += "<p class='weekDay'>" + week[l] + "</p>";
             
         }
-    for (let i = 0; i < weekDay[k]-1; i++) {
-        table[k].innerHTML += "<p></p>";
+    for (let i = 0; i < weekDay[f]-1; i++) {
+        table[f].innerHTML += "<p></p>";
     } 
-    for (let i = 1; i < semester[k].length; i++) {
-        table[k].innerHTML += "<p class='day'>" + semester[k][i] + "</p>";
+    for (let i = 1; i < semester[f].length; i++) {
+        console.log(semester[f].indexOf(i));
+        let the = semester[f].indexOf(i);
+        table[f].innerHTML += "<button class='day' onclick='dayPanelCreate(semester["+ f +"].indexOf(" + the + "))'>" + semester[f][i] + "</button>";
         
     }
 
@@ -178,9 +180,45 @@ function isOdd(num) { return num % 2;}
 
 
 //function to insert date, hours and close button into #dayPanel, then display it
-function dayPanelCreate(day, k) {
+function dayPanelCreate(day, f) {
+    if ( day < 31 ) {
+        f = "Január 2022";
+        table[0].style.transform = "translate(200%, 0%)";
+        table[2].style.transform = "translate(-200%, 0%)";
+        months[0].style.transform = "translate(200%, 0%)";
+        months[2].style.transform = "translate(-200%, 0%)";
+
+        
+        
+        
+        
+        
+    } else if ( day > 30 && day < 59) {
+        f = "Február 2022";
+        table[1].style.transform = "translate(100%, 0%)";
+        table[2].style.transform = "translate(-200%, 0%)";
+        table[0].style.transform = "translate(100%, 0%)";
+        months[1].style.transform = "translate(100%, 0%)";
+        months[2].style.transform = "translate(-200%, 0%)";
+        months[0].style.transform = "translate(100%, 0%)";
+        
+        
+        
+        
+    } else if (day > 58) {
+        f = "Marec 2022";
+        table[1].style.transform = "none";
+        table[2].style.transform = "none";
+        table[0].style.transform = "none";
+        months[1].style.transform = "none";
+        months[2].style.transform = "none";
+        months[0].style.transform = "none";
+        
+        
+       
+    };
     dayPanel.innerHTML = "";
-    dayPanel.innerHTML += "<p class='panelTitleText'>" +dayButtons[day].textContent+ ". " + k + "</p>";
+    dayPanel.innerHTML += "<p class='panelTitleText'>" +dayButtons[day].textContent+ ". " + f + "</p>";
     dayPanel.innerHTML += "<div id='panelClose'></div>";
     dayPanel.innerHTML += "<div id='hourLines'></div>";
     let hourLines = document.querySelector("#hourLines");
@@ -244,8 +282,7 @@ function close(dayy) {
     });
 }
 //On click, move the month clicked on the right side, create 2/3vw wide #dayPanel
-let opening = false;
-let dayy = 0;
+/*
 for (let day = 0; day < dayButtons.length; day++) {
     dayButtons[day].addEventListener("click", function() {
         let k = "";
@@ -293,3 +330,4 @@ for (let day = 0; day < dayButtons.length; day++) {
     });
     
 }
+*/
