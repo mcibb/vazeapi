@@ -21,16 +21,17 @@ app.listen(PORT, "0.0.0.0", () => {
 
 app.use(express.static("public"));
 
-app.get("/add/:day/:hour/:text", addText);
+app.get("/add/:month/:day/:hour", addText);
 
 function addText(request, response) {
     let data = request.params;
+    let month = data.month;
     let day = data.day;
     let hour = data.hour;
     
-    let dayArray = activities[day];
+    let dayArray = activities[month];
 
-    dayArray[hour] = data.text;
+    dayArray[day] = hour;
     let write = JSON.stringify(activities, null, 2);
     fs.writeFile("activities.json", write, finished);
 
