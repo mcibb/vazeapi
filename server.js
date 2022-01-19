@@ -56,24 +56,132 @@ app.get("/writejson", writeJSON);
 
 function writeJSON(request, response) {
     
-    
+
+
     let hours = {
-        "8": "a",
-        "9": "b",
-        "10": "c",
-        "11": "d",
-        "12": "e",
-        "13": "f",
-        "14": "g",
-        "15": "h",
-        "16": "i",
-        "17": "j",
-        "18": "k",
-        "19": "l"
-    }
+        "8": " ",
+        "9": " ",
+        "10": " ",
+        "11": " ",
+        "12": " ",
+        "13": " ",
+        "14": " ",
+        "15": " ",
+        "16": " ",
+        "17": " ",
+        "18": " k",
+        "19": " l"
+    };
+
+    let months = {
+        "0": {
+            "0": hours,
+            "1": hours,
+            "2": hours,
+            "3": hours,
+            "4": hours,
+            "5": hours,
+            "6": hours,
+            "7": hours,
+            "8": hours,
+            "9": hours,
+            "10": hours,
+            "11": hours,
+            "12": hours,
+            "13": hours,
+            "13": hours,
+            "14": hours,
+            "15": hours,
+            "16": hours,
+            "17": hours,
+            "18": hours,
+            "19": hours,
+            "20": hours,
+            "21": hours,
+            "22": hours,
+            "23": hours,
+            "24": hours,
+            "25": hours,
+            "26": hours,
+            "27": hours,
+            "28": hours,
+            "29": hours,
+            "30": hours
+        },
+        "1": {
+            "0": hours,
+            "1": hours,
+            "2": hours,
+            "3": hours,
+            "4": hours,
+            "5": hours,
+            "6": hours,
+            "7": hours,
+            "8": hours,
+            "9": hours,
+            "10": hours,
+            "11": hours,
+            "12": hours,
+            "13": hours,
+            "13": hours,
+            "14": hours,
+            "15": hours,
+            "16": hours,
+            "17": hours,
+            "18": hours,
+            "19": hours,
+            "20": hours,
+            "21": hours,
+            "22": hours,
+            "23": hours,
+            "24": hours,
+            "25": hours,
+            "26": hours,
+            "27": hours
+        },
+        "2": {
+            "0": hours,
+            "1": hours,
+            "2": hours,
+            "3": hours,
+            "4": hours,
+            "5": hours,
+            "6": hours,
+            "7": hours,
+            "8": hours,
+            "9": hours,
+            "10": hours,
+            "11": hours,
+            "12": hours,
+            "13": hours,
+            "13": hours,
+            "14": hours,
+            "15": hours,
+            "16": hours,
+            "17": hours,
+            "18": hours,
+            "19": hours,
+            "20": hours,
+            "21": hours,
+            "22": hours,
+            "23": hours,
+            "24": hours,
+            "25": hours,
+            "26": hours,
+            "27": hours,
+            "28": hours,
+            "29": hours,
+            "30": hours
+        }
+    };
+
     
-    for (i = 0; i < 90; i++) {
-        activities[i] = hours;
+
+   
+   
+    
+    for (i = 0; i < 3; i++) {
+        activities[i] = months[i];
         
     }
     let write = JSON.stringify(activities, null, 2);
@@ -89,3 +197,4 @@ function writeJSON(request, response) {
 
     
 }
+

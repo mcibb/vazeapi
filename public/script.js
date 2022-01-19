@@ -76,22 +76,24 @@ for (let i = 0; i < 3; i++) {
 
 
 // Display months, weekdays and days 
-for (let f = 0; f <3; f++) {
+for (let month = 0; month <3; month++) {
 
     let weekDay = [6, 2, 2];
     
 
     for (let l = 0; l <7; l++) {
-            table[f].innerHTML += "<p class='weekDay'>" + week[l] + "</p>";
+            table[month].innerHTML += "<p class='weekDay'>" + week[l] + "</p>";
             
         }
-    for (let i = 0; i < weekDay[f]-1; i++) {
-        table[f].innerHTML += "<p></p>";
+    for (let i = 0; i < weekDay[month]-1; i++) {
+        table[month].innerHTML += "<p></p>";
     } 
-    for (let i = 1; i < semester[f].length; i++) {
-        console.log(semester[f].indexOf(i));
-        let the = semester[f].indexOf(i);
-        table[f].innerHTML += "<button class='day' onclick='dayPanelCreate(semester["+ f +"].indexOf(" + the + "))'>" + semester[f][i] + "</button>";
+    for (let i = 1; i < semester[month].length; i++) {
+        console.log(semester[month].indexOf(i));
+        let the = semester[month].indexOf(i);
+        console.log(the);
+        
+        table[month].innerHTML += "<button class='day' onclick='dayPanelCreate(" + month + ", " + the + ")'>" + the + "</button>";
         
     }
 
@@ -180,8 +182,8 @@ function isOdd(num) { return num % 2;}
 
 
 //function to insert date, hours and close button into #dayPanel, then display it
-function dayPanelCreate(day, f) {
-    if ( day < 31 ) {
+function dayPanelCreate(month, the) {
+    if ( month == 0 ) {
         f = "Január 2022";
         table[0].style.transform = "translate(200%, 0%)";
         table[2].style.transform = "translate(-200%, 0%)";
@@ -193,7 +195,7 @@ function dayPanelCreate(day, f) {
         
         
         
-    } else if ( day > 30 && day < 59) {
+    } else if ( month == 1) {
         f = "Február 2022";
         table[1].style.transform = "translate(100%, 0%)";
         table[2].style.transform = "translate(-200%, 0%)";
@@ -205,7 +207,7 @@ function dayPanelCreate(day, f) {
         
         
         
-    } else if (day > 58) {
+    } else if (month == 2) {
         f = "Marec 2022";
         table[1].style.transform = "none";
         table[2].style.transform = "none";
@@ -218,19 +220,18 @@ function dayPanelCreate(day, f) {
        
     };
     dayPanel.innerHTML = "";
-    dayPanel.innerHTML += "<p class='panelTitleText'>" +dayButtons[day].textContent+ ". " + f + "</p>";
+    dayPanel.innerHTML += "<p class='panelTitleText'>" + the + ". " + f + "</p>";
     dayPanel.innerHTML += "<div id='panelClose'></div>";
     dayPanel.innerHTML += "<div id='hourLines'></div>";
     let hourLines = document.querySelector("#hourLines");
-    console.log(day);
-    let dayy = day;
-    console.log(dayy);
+    
+   
 
     for (x = 8; x < 20; x++) {
         hourLines.innerHTML += "<div class='hourLinesText' style='max-width: 5vw'>" + x + ":⁰⁰</div>";
-        hourLines.innerHTML += "<input type='text' class='hourLinesText' value='' style='max-width: 50vw';>";
+        hourLines.innerHTML += "<input type='text' class='hourLinesText' value=' ' style='max-width: 50vw';>";
     }
-
+/*
     let lines = document.querySelectorAll(".hourLinesText");
     let hour = 8;
     for (line = 1; line < lines.length; line +=2){
@@ -244,17 +245,17 @@ function dayPanelCreate(day, f) {
 
         
     }
-    
+    */
     hoverTime();
     
     
     dayPanel.style.display = "grid";
     
-    close(dayy);
+    close(month);
     
 }
 
-function close(dayy) {
+function close(month) {
     console.log(dayy);
     let linesAfter = document.querySelectorAll(".hourLinesText");
     panelClose.addEventListener("click", function() {
