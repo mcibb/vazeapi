@@ -1,7 +1,11 @@
 var fs = require("fs");
 
 let data = fs.readFileSync("activities.json");
-let activities = JSON.stringify(data);
+let activities = {
+    "0": {},
+    "1": {},
+    "2": {} 
+ };
 console.log(activities)
 
 console.log("server start");
@@ -56,8 +60,8 @@ app.get("/all", sendAll);
 
 function sendAll(request, response) {
    
-    
-    response.send(activities);
+    let activities2 = JSON.parse(JSON.stringify(activities));
+    response.send(activities2);
 }
 
 app.get("/writejson/", writeJSON);
