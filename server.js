@@ -23,16 +23,15 @@ app.listen(PORT, "0.0.0.0", () => {
 
 app.use(express.static("public"));
 
-app.get("/add/:month/:day/:hour/:text", addText);
+app.get("/add/:text", addText);
 
 function addText(request, response) {
     let data = request.params;
-    let month = data.month;
-    let day = data.day;
-    let hour = data.hour;
     let text = data.text;
     
-    activities.Number(month.toString()).Number(day.toString()).Number(hour.toString()) = text
+    
+    
+    activities.String("0").String("0").String("8") = text
     
     
     
