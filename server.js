@@ -1,8 +1,10 @@
 var fs = require("fs");
+var flatten = require('flat');
 
 let data = fs.readFileSync("activities.json");
-let activities = JSON.parse(data);
+let db = JSON.parse(data);
 
+let activities = flatten(db);
 
 
 console.log("server start");
@@ -27,11 +29,9 @@ app.get("/add", addText);
 
 function addText(request, response) {
     let data = request.params;
-    let text = data.text;
     
     
-    
-    activities.String("0").String("0").String("8") = "hellooo";
+
     
     
     
@@ -49,7 +49,7 @@ function addText(request, response) {
 
     
     
-    response.send(activities);
+    response.send(db);
 }
 
 app.get("/all", sendAll);
