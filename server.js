@@ -22,21 +22,21 @@ app.listen(PORT, "0.0.0.0", () => {
 
 app.use(express.static("public"));
 
-app.get("/add/:month/:day/:hour/:text", addText);
+app.get("/add/:month/:day/:hour", addText);
 
 function addText(request, response) {
     let data = request.params;
     let month = data.month;
     let day = data.day;
     let hour = data.hour;
-    let text = data.text;
+    
     
 
     
     
     
     
-    [day][hour.toString()].value = text;
+    
     
    
     
