@@ -74,7 +74,7 @@ app.get("/all", sendAll);
 function sendAll(request, response) {
    
     
-    response.send(activities);
+    response.send(db);
 }
 
 app.get("/writejson", writeJSON);
