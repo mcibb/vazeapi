@@ -5,7 +5,7 @@ var unflatten = require('flat').unflatten;
 let data = fs.readFileSync("activities.json");
 let db = JSON.parse(data);
 
-let activities = flatten(db);
+let activities = flatten(db, {safe: true});
 //let showDb = unflatten(activities);
 
 
