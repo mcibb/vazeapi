@@ -6,7 +6,8 @@ let activities = {
     "1": {},
     "2": {} 
  };
-console.log(activities)
+let activities2 = JSON.stringify(activities);
+
 
 console.log("server start");
 
@@ -60,8 +61,8 @@ app.get("/all", sendAll);
 
 function sendAll(request, response) {
    
-    let activities2 = JSON.parse(JSON.stringify(activities));
-    response.send(activities2);
+    
+    response.send(activities2, activities);
 }
 
 app.get("/writejson/", writeJSON);
