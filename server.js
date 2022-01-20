@@ -32,17 +32,13 @@ app.get("/add", addText);
 
 function addText(request, response) {
     let data = request.params;
-    
-    let activities = flatten(db);
-
-    
+    /*
+    let activities = flatten(db); 
     activities["0.0.9"] = "test";
-    
     activities = unflatten(activities); 
-
-    //let result = activities["0"][0][9];
-
-
+    let result = activities["0"][0][9];
+*/
+    db["0"][0][1] = "yikers finally";
     
    
     
@@ -55,7 +51,7 @@ function addText(request, response) {
 
     
     
-    response.send(activities);
+    response.send(db);
 }
 
 app.get("/db2", sendAll);
