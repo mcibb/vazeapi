@@ -1,10 +1,12 @@
 var fs = require("fs");
 var flatten = require('flat');
+var unflatten = require('flat').unflatten;
 
 let data = fs.readFileSync("activities.json");
 let db = JSON.parse(data);
 
 let activities = flatten(db);
+let showDb = unflatten(activities);
 
 
 console.log("server start");
@@ -50,6 +52,15 @@ function addText(request, response) {
     
     
     response.send(db);
+}
+
+
+app.get("/db", sendAll);
+
+function sendAll(request, response) {
+   
+    
+    response.send(showDb);
 }
 
 app.get("/all", sendAll);
