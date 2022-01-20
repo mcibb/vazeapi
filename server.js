@@ -1,7 +1,7 @@
 var fs = require("fs");
 
 let data = fs.readFileSync("activities.json");
-let activities = JSON.parse(data);
+let activities = data
 console.log(activities)
 
 console.log("server start");
@@ -22,7 +22,7 @@ app.listen(PORT, "0.0.0.0", () => {
 
 app.use(express.static("public"));
 
-app.get("/add/:x/:month/:day/:hour/:text", addText);
+app.get("/add/:month/:day/:hour/:text", addText);
 
 function addText(request, response) {
     let data = request.params;
@@ -31,7 +31,12 @@ function addText(request, response) {
     let hour = data.hour;
     let text = data.text;
     
-    activities[month.toString()].day.toString()[hour.toString()] = text;
+    let dayArray = activities[month];
+    
+    dayArray[day][hour] = text;
+    
+    
+    
     
    
     
