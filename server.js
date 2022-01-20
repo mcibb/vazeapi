@@ -30,8 +30,8 @@ function addText(request, response) {
     let day = data.day;
     let hour = data.hour;
     let text = data.text;
-
-    activities.months[month].days[day].hours[hour] = text;
+    
+    activities.month[day].hour = text;
     
    
     
@@ -80,7 +80,7 @@ function writeJSON(request, response) {
     };
 
     let months = {
-        "0": [{
+        "0": {
             "0": hours,
             "1": hours,
             "2": hours,
@@ -113,8 +113,8 @@ function writeJSON(request, response) {
             "28": hours,
             "29": hours,
             "30": hours
-        }],
-        "1": [{
+        },
+        "1": {
             "0": hours,
             "1": hours,
             "2": hours,
@@ -144,8 +144,8 @@ function writeJSON(request, response) {
             "25": hours,
             "26": hours,
             "27": hours
-        }],
-        "2": [{
+        },
+        "2": {
             "0": hours,
             "1": hours,
             "2": hours,
@@ -178,7 +178,7 @@ function writeJSON(request, response) {
             "28": hours,
             "29": hours,
             "30": hours
-        }]
+        }
     };
 
     
