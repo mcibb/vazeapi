@@ -37,7 +37,7 @@ function addText(request, response) {
     
     activities["0.0.9"] = "test";
     
-    activities = flatten.unflatten(activities);  
+    activities = activities.unflatten();  
     
    
     
