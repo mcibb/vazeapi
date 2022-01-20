@@ -62,7 +62,7 @@ app.get("/all", sendAll);
 function sendAll(request, response) {
    
     
-    response.send(activities2, activities);
+    response.send(activities2);
 }
 
 app.get("/writejson/", writeJSON);
