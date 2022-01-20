@@ -30,9 +30,8 @@ function addText(request, response) {
     let hour = data.hour;
     let text = data.text;
 
-    let months = activities[month];
-    let days = months[day];
-    let result = days[hour];
+    
+    let result = activities[month][day][hour];
     
 
     
