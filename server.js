@@ -31,7 +31,7 @@ function addText(request, response) {
     let hour = data.hour;
     let text = data.text;
     
-    activities[month.toString()][day][hour] = text;
+    activities[month][day][hour] = text;
     
     
     
@@ -85,7 +85,7 @@ function writeJSON(request, response) {
     };
 
     let months = {
-        "0": 
+        "jan": 
         {   
             "0": hours,
             "1": hours,
@@ -120,7 +120,7 @@ function writeJSON(request, response) {
             "29": hours,
             "30": hours
         },
-        "1": 
+        "feb": 
             {   
                 "0": hours,
                 "1": hours,
@@ -152,7 +152,7 @@ function writeJSON(request, response) {
                 "26": hours,
                 "27": hours
             },
-        "2": 
+        "mar": 
             {   
                 "0": hours,
                 "1": hours,
