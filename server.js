@@ -31,6 +31,7 @@ function addText(request, response) {
     let hour = data.hour;
     let text = data.text;
 
+    activities.months[month].days[day].hour = text;
     
    
     
@@ -54,18 +55,18 @@ function sendAll(request, response) {
     response.send(activities);
 }
 
-app.get("/writejson/:hour", writeJSON);
+app.get("/writejson/", writeJSON);
 
 
 function writeJSON(request, response) {
     
     let data = request.params;
-    let hour = data.hour;
+    
 
 
     let hours = {
         "8": " ",
-        "9": hour,
+        "9": " ",
         "10": " ",
         "11": " ",
         "12": " ",
@@ -74,12 +75,12 @@ function writeJSON(request, response) {
         "15": " ",
         "16": " ",
         "17": " ",
-        "18": " k",
-        "19": " l"
+        "18": " ",
+        "19": " "
     };
 
     let months = {
-        "0": {
+        "0": [{
             "0": hours,
             "1": hours,
             "2": hours,
@@ -112,8 +113,8 @@ function writeJSON(request, response) {
             "28": hours,
             "29": hours,
             "30": hours
-        },
-        "1": {
+        }],
+        "1": [{
             "0": hours,
             "1": hours,
             "2": hours,
@@ -143,8 +144,8 @@ function writeJSON(request, response) {
             "25": hours,
             "26": hours,
             "27": hours
-        },
-        "2": {
+        }],
+        "2": [{
             "0": hours,
             "1": hours,
             "2": hours,
@@ -177,7 +178,7 @@ function writeJSON(request, response) {
             "28": hours,
             "29": hours,
             "30": hours
-        }
+        }]
     };
 
     
@@ -197,7 +198,7 @@ function writeJSON(request, response) {
         reply = {
             msg: "OK"
         }
-    response.send(activities);
+    response.send(reply);
     }
 
     
