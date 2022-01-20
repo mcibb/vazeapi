@@ -1,7 +1,7 @@
 var fs = require("fs");
 
 let data = fs.readFileSync("activities.json");
-let activities = data
+let activities = JSON.parse(data);
 console.log(activities)
 
 console.log("server start");
@@ -31,15 +31,12 @@ function addText(request, response) {
     let hour = data.hour;
     let text = data.text;
     
-    let dayArray = activities[month];
-    
-    let hourArray = dayArray[day];
 
-    let hour = hourArray[hour.toString()];
-    
-    hour = text;
     
     
+    
+    
+    [day][hour.toString()].value = text;
     
    
     
@@ -52,7 +49,7 @@ function addText(request, response) {
 
     
     
-    response.send(activities);
+    response.send(activities[month.toString()][day.toString()][hour.toString()]);
 }
 
 app.get("/all", sendAll);
@@ -72,8 +69,8 @@ function writeJSON(request, response) {
     
 
 
-    let hours = [{
-        "8": " ",
+    let hours = {
+        "8": "FFF ",
         "9": " ",
         "10": " ",
         "11": " ",
@@ -85,111 +82,111 @@ function writeJSON(request, response) {
         "17": " ",
         "18": " ",
         "19": " "
-    }];
+    };
 
     let months = {
-        "0": [
+        "0": 
         {   
-            "0": [hours],
-            "1": [hours],
-            "2": [hours],
-            "3": [hours],
-            "4": [hours],
-            "5": [hours],
-            "6": [hours],
-            "7": [hours],
-            "8": [hours],
-            "9": [hours],
-            "10": [hours],
-            "11": [hours],
-            "12": [hours],
-            "13": [hours],
-            "13": [hours],
-            "14": [hours],
-            "15": [hours],
-            "16": [hours],
-            "17": [hours],
-            "18": [hours],
-            "19": [hours],
-            "20": [hours],
-            "21": [hours],
-            "22": [hours],
-            "23": [hours],
-            "24": [hours],
-            "25": [hours],
-            "26": [hours],
-            "27": [hours],
-            "28": [hours],
-            "29": [hours],
-            "30": [hours]
-        }],
-        "1": [
+            "0": hours,
+            "1": hours,
+            "2": hours,
+            "3": hours,
+            "4": hours,
+            "5": hours,
+            "6": hours,
+            "7": hours,
+            "8": hours,
+            "9": hours,
+            "10": hours,
+            "11": hours,
+            "12": hours,
+            "13": hours,
+            "13": hours,
+            "14": hours,
+            "15": hours,
+            "16": hours,
+            "17": hours,
+            "18": hours,
+            "19": hours,
+            "20": hours,
+            "21": hours,
+            "22": hours,
+            "23": hours,
+            "24": hours,
+            "25": hours,
+            "26": hours,
+            "27": hours,
+            "28": hours,
+            "29": hours,
+            "30": hours
+        },
+        "1": 
             {   
-                "0": [hours],
-                "1": [hours],
-                "2": [hours],
-                "3": [hours],
-                "4": [hours],
-                "5": [hours],
-                "6": [hours],
-                "7": [hours],
-                "8": [hours],
-                "9": [hours],
-                "10": [hours],
-                "11": [hours],
-                "12": [hours],
-                "13": [hours],
-                "13": [hours],
-                "14": [hours],
-                "15": [hours],
-                "16": [hours],
-                "17": [hours],
-                "18": [hours],
-                "19": [hours],
-                "20": [hours],
-                "21": [hours],
-                "22": [hours],
-                "23": [hours],
-                "24": [hours],
-                "25": [hours],
-                "26": [hours],
-                "27": [hours]
-            }],
-        "2": [
+                "0": hours,
+                "1": hours,
+                "2": hours,
+                "3": hours,
+                "4": hours,
+                "5": hours,
+                "6": hours,
+                "7": hours,
+                "8": hours,
+                "9": hours,
+                "10": hours,
+                "11": hours,
+                "12": hours,
+                "13": hours,
+                "13": hours,
+                "14": hours,
+                "15": hours,
+                "16": hours,
+                "17": hours,
+                "18": hours,
+                "19": hours,
+                "20": hours,
+                "21": hours,
+                "22": hours,
+                "23": hours,
+                "24": hours,
+                "25": hours,
+                "26": hours,
+                "27": hours
+            },
+        "2": 
             {   
-                "0": [hours],
-                "1": [hours],
-                "2": [hours],
-                "3": [hours],
-                "4": [hours],
-                "5": [hours],
-                "6": [hours],
-                "7": [hours],
-                "8": [hours],
-                "9": [hours],
-                "10": [hours],
-                "11": [hours],
-                "12": [hours],
-                "13": [hours],
-                "13": [hours],
-                "14": [hours],
-                "15": [hours],
-                "16": [hours],
-                "17": [hours],
-                "18": [hours],
-                "19": [hours],
-                "20": [hours],
-                "21": [hours],
-                "22": [hours],
-                "23": [hours],
-                "24": [hours],
-                "25": [hours],
-                "26": [hours],
-                "27": [hours],
-                "28": [hours],
-                "29": [hours],
-                "30": [hours]
-            }]
+                "0": hours,
+                "1": hours,
+                "2": hours,
+                "3": hours,
+                "4": hours,
+                "5": hours,
+                "6": hours,
+                "7": hours,
+                "8": hours,
+                "9": hours,
+                "10": hours,
+                "11": hours,
+                "12": hours,
+                "13": hours,
+                "13": hours,
+                "14": hours,
+                "15": hours,
+                "16": hours,
+                "17": hours,
+                "18": hours,
+                "19": hours,
+                "20": hours,
+                "21": hours,
+                "22": hours,
+                "23": hours,
+                "24": hours,
+                "25": hours,
+                "26": hours,
+                "27": hours,
+                "28": hours,
+                "29": hours,
+                "30": hours
+            }
     };
 
     
