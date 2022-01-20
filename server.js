@@ -6,7 +6,7 @@ let data = fs.readFileSync("activities.json");
 let db = JSON.parse(data);
 
 let activities = flatten(db);
-let showDb = unflatten(activities);
+//let showDb = unflatten(activities);
 
 
 console.log("server start");
@@ -60,7 +60,7 @@ app.get("/db", sendAll);
 function sendAll(request, response) {
    
     
-    response.send(showDb);
+    response.send(unflatten(activities));
 }
 
 app.get("/all", sendAll);
