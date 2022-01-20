@@ -1,12 +1,12 @@
 var fs = require("fs");
 var flatten = require('flat');
-var unflatten = require('unflatten');
+
 
 let data = fs.readFileSync("activities.json");
 let db = JSON.parse(data);
 
-let activities = flatten(db);
-let showDb = unflatten(activities);
+
+
 
 
 console.log("server start");
@@ -32,13 +32,12 @@ app.get("/add", addText);
 function addText(request, response) {
     let data = request.params;
     
-    
+    let activities = flatten(db);
 
     
     activities["0.0.9"] = "test";
     
-    
-    
+    activities.unflatten();  
     
    
     
