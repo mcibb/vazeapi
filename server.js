@@ -1,7 +1,7 @@
 var fs = require("fs");
 
 let data = fs.readFileSync("activities.json");
-let activities = data;
+let activities = JSON.parse(data);
 
 
 
