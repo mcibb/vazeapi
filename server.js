@@ -58,7 +58,7 @@ app.get("/all", sendAll);
 function sendAll(request, response) {
    
     
-    response.send(activities2);
+    response.send(activities);
 }
 
 app.get("/writejson/", writeJSON);
