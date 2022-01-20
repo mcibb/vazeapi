@@ -1,12 +1,8 @@
 var fs = require("fs");
 
 let data = fs.readFileSync("activities.json");
-let activities = {
-    "0": {},
-    "1": {},
-    "2": {} 
- };
-let activities2 = JSON.stringify(activities);
+let activities = data;
+
 
 
 console.log("server start");
@@ -36,7 +32,7 @@ function addText(request, response) {
     let hour = data.hour;
     let text = data.text;
     
-    activities[month][day][hour] = text;
+    activities.Number(month).Number(day).Number(hour) = text
     
     
     
