@@ -40,6 +40,8 @@ function addText(request, response) {
     
     activities = unflatten(activities); 
 
+    let result = activities["0"][0][9];
+
 
     
    
@@ -53,7 +55,7 @@ function addText(request, response) {
 
     
     
-    response.send(activities);
+    response.send(result);
 }
 
 app.get("/db2", sendAll);
