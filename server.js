@@ -37,11 +37,11 @@ function addText(request, response) {
     
     activities["0.0.9"] = "test";
     
-    activities.unflatten();  
+    db = activities.unflatten();  
     
    
     
-    let write = JSON.stringify(activities, null, 2);
+    let write = JSON.stringify(db, null, 2);
     fs.writeFile("activities.json", write, finished);
 
     function finished(err) {
