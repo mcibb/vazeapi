@@ -7,6 +7,7 @@ console.log(activities)
 console.log("server start");
 
 var express = require("express");
+const req = require("express/lib/request");
 
 var app = express();
 
@@ -53,16 +54,18 @@ function sendAll(request, response) {
     response.send(activities);
 }
 
-app.get("/writejson", writeJSON);
+app.get("/writejson/:hour", writeJSON);
 
 
 function writeJSON(request, response) {
     
+    let data = request.params;
+    let hour = data.hour;
 
 
     let hours = {
         "8": " ",
-        "9": " ",
+        "9": hour,
         "10": " ",
         "11": " ",
         "12": " ",
@@ -194,7 +197,7 @@ function writeJSON(request, response) {
         reply = {
             msg: "OK"
         }
-    response.send(reply);
+    response.send(activities);
     }
 
     
