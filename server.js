@@ -5,7 +5,7 @@ var unflatten = require('flat').unflatten;
 let data = fs.readFileSync("activities.json");
 let db = JSON.parse(data);
 
-let activities = flatten(db, {safe: true});
+let activities = flatten(db);
 //let showDb = unflatten(activities);
 
 
@@ -35,7 +35,7 @@ function addText(request, response) {
     
 
     
-    
+    activities["0.0.9"] = "test";
     
     
     
@@ -60,7 +60,7 @@ app.get("/db", sendAll);
 function sendAll(request, response) {
    
     
-    response.send(unflatten(activities));
+    response.send(unflatten(JSON.parse(activities)));
 }
 
 app.get("/all", sendAll);
