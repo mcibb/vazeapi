@@ -23,7 +23,7 @@ app.listen(PORT, "0.0.0.0", () => {
 
 app.use(express.static("public"));
 
-app.get("/add/:text", addText);
+app.get("/add", addText);
 
 function addText(request, response) {
     let data = request.params;
@@ -31,7 +31,7 @@ function addText(request, response) {
     
     
     
-    activities.String("0").String("0").String("8") = text
+    activities.String("0").String("0").String("8") = "hellooo";
     
     
     
