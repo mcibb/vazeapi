@@ -37,7 +37,7 @@ function addText(request, response) {
     
     activities["0.0.9"] = "test";
     
-    db = activities.unflatten();  
+    activities = flatten.unflatten(activities);  
     
    
     
@@ -50,7 +50,7 @@ function addText(request, response) {
 
     
     
-    response.send(db);
+    response.send(activities);
 }
 
 app.get("/db2", sendAll);
