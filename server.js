@@ -1,6 +1,6 @@
 var fs = require("fs");
 var flatten = require('flat');
-var unflatten = require('flat');
+var unflatten = require('unflatten');
 
 let data = fs.readFileSync("activities.json");
 let db = JSON.parse(data);
@@ -67,7 +67,7 @@ app.get("/db", sendAll);
 function sendAll(request, response) {
    
     
-    response.send(activities.unflatten());
+    response.send(showDb);
 }
 
 app.get("/all", sendAll);
