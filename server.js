@@ -27,9 +27,9 @@ app.get("/add/:month/:day/:hour/:text", addText);
 
 function addText(request, response) {
     let data = request.params;
-    let month = data.month;
-    let day = data.day;
-    let hour = data.hour;
+    let month = (data.month).toString();
+    let day = (data.day).toString();
+    let hour = (data.hour).toString();
     let text = data.text;
     
     activities.Number(month).Number(day).Number(hour) = text
@@ -207,7 +207,7 @@ function writeJSON(request, response) {
         reply = {
             msg: "OK"
         }
-    response.send(reply);
+    response.send(activities);
     }
 
     
