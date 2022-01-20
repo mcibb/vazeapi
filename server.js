@@ -55,8 +55,7 @@ function addText(request, response) {
         console.log("OK");
     }
 
-    let now = fs.readFileSync("activities.json");
-    let db = JSON.parse(now);
+   
     
     response.send(db);
 }
