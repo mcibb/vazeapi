@@ -1,5 +1,6 @@
 var fs = require("fs");
 var flatten = require('flat');
+var unflatten = require('flat').unflatten;
 
 
 let data = fs.readFileSync("activities.json");
@@ -37,7 +38,7 @@ function addText(request, response) {
     
     activities["0.0.9"] = "test";
     
-    activities = activities.unflatten();  
+    activities = unflatten(activities);  
     
    
     
