@@ -38,7 +38,9 @@ function addText(request, response) {
     
     activities["0.0.9"] = "test";
     
-    activities = unflatten(activities);  
+    activities = unflatten(activities); 
+
+
     
    
     
@@ -213,7 +215,7 @@ function writeJSON(request, response) {
    
     
     for (i = 0; i < 3; i++) {
-        activities[i] = months[i];
+        db[i] = months[i];
         
     }
     let write = JSON.stringify(activities, null, 2);
