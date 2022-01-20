@@ -6,7 +6,7 @@ let data = fs.readFileSync("activities.json");
 let db = JSON.parse(data);
 
 let activities = flatten(db);
-//let showDb = unflatten(activities);
+let showDb = unflatten(activities);
 
 
 console.log("server start");
@@ -54,13 +54,20 @@ function addText(request, response) {
     response.send(db);
 }
 
+app.get("/db2", sendAll);
+
+function sendAll(request, response) {
+   
+    
+    response.send(unflatten(activities));
+}
 
 app.get("/db", sendAll);
 
 function sendAll(request, response) {
    
     
-    response.send(unflatten(JSON.parse(activities)));
+    response.send(activities.unflatten());
 }
 
 app.get("/all", sendAll);
@@ -68,7 +75,7 @@ app.get("/all", sendAll);
 function sendAll(request, response) {
    
     
-    response.send(activities.unflatten());
+    response.send(activities);
 }
 
 app.get("/writejson", writeJSON);
