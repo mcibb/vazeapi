@@ -27,12 +27,12 @@ app.get("/add/:month/:day/:hour/:text", addText);
 
 function addText(request, response) {
     let data = request.params;
-    let month = (data.month).toString();
-    let day = (data.day).toString();
-    let hour = (data.hour).toString();
+    let month = data.month;
+    let day = data.day;
+    let hour = data.hour;
     let text = data.text;
     
-    activities.Number(month).Number(day).Number(hour) = text
+    activities.Number(month.toString()).Number(day.toString()).Number(hour.toString()) = text
     
     
     
