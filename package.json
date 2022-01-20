@@ -5,6 +5,7 @@
     "name": "vazeapi",
     "version": "0.0.1",
     "dependencies": {
-        "express": "^4.17.2"
+        "express": "^4.17.2",
+        "flt": "^0.41.0"
     }
 }
