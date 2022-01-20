@@ -1,8 +1,8 @@
 var fs = require("fs");
 
 let data = fs.readFileSync("activities.json");
-let activities = data;
-
+let activities = JSON.parse(data);
+console.log(activities)
 
 console.log("server start");
 
@@ -31,7 +31,7 @@ function addText(request, response) {
     let text = data.text;
 
     
-    
+   
     
     let write = JSON.stringify(activities, null, 2);
     fs.writeFile("activities.json", write, finished);
