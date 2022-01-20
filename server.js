@@ -31,7 +31,7 @@ function addText(request, response) {
     let hour = data.hour;
     let text = data.text;
     
-    activities[month.toString()][day.toString()][hour] = text;
+    activities[month.toString()][day.toString()][hour.toString()] = text;
     
    
     
