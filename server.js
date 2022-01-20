@@ -22,11 +22,12 @@ app.listen(PORT, "0.0.0.0", () => {
 
 app.use(express.static("public"));
 
-app.get("/add/:month", addText);
+app.get("/add/:month/:day", addText);
 
 function addText(request, response) {
     let data = request.params;
     let month = data.month;
+    let day = data.day;
     
     
     //activities[month][day.toString()][hour.toString()] = text;
@@ -47,7 +48,7 @@ function addText(request, response) {
 
     
     
-    response.send(activities[month.toString()]);
+    response.send(activities[month.toString()][day.toString()]);
 }
 
 app.get("/all", sendAll);
