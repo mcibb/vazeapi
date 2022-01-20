@@ -61,7 +61,7 @@ function sendAll(request, response) {
     response.send(activities);
 }
 
-app.get("/writejson/", writeJSON);
+app.get("/writejson", writeJSON);
 
 
 function writeJSON(request, response) {
@@ -86,7 +86,7 @@ function writeJSON(request, response) {
     };
 
     let months = {
-        "jan": 
+        "0": 
         {   
             "0": hours,
             "1": hours,
@@ -121,7 +121,7 @@ function writeJSON(request, response) {
             "29": hours,
             "30": hours
         },
-        "feb": 
+        "1": 
             {   
                 "0": hours,
                 "1": hours,
@@ -153,7 +153,7 @@ function writeJSON(request, response) {
                 "26": hours,
                 "27": hours
             },
-        "mar": 
+        "2": 
             {   
                 "0": hours,
                 "1": hours,
