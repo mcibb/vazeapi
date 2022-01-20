@@ -28,17 +28,23 @@ app.listen(PORT, "0.0.0.0", () => {
 
 app.use(express.static("public"));
 
-app.get("/add", addText);
+app.get("/add/:month/:day/:hour/:text", addText);
 
 function addText(request, response) {
     let data = request.params;
+    let month = data.month;
+    let day = data.day;
+    let hour = data.hour;
+    let text = data.text;
     /*
     let activities = flatten(db); 
     activities["0.0.9"] = "test";
     activities = unflatten(activities); 
     let result = activities["0"][0][9];
 */
-    db["0"][0][1] = "yikers finally";
+    db[month][day][hour] = text;
+
+    
     
    
     
