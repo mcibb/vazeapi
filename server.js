@@ -33,8 +33,11 @@ function addText(request, response) {
     
     let dayArray = activities[month];
     
-    dayArray[day][hour.toString()] = text;
+    let hourArray = dayArray[day];
+
+    let hour = hourArray[hour.toString()];
     
+    hour = text;
     
     
     
