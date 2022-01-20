@@ -30,7 +30,14 @@ function addText(request, response) {
     let hour = data.hour;
     let text = data.text;
 
-    let result = activities.month.day.hour;
+    let months = activities[month];
+    let days = Object.keys(months);
+    let dayPicked = days[day];
+    let hours = Object.keys(dayPicked);
+    let hourPicked = hours[hour];
+
+
+    let result = hourPicked;
 
     result = text;
     
