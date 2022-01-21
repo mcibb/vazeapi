@@ -253,7 +253,7 @@ function dayPanelCreate(month, the) {
             
             back = fetch(getDayUrl.format(month, the, hour)).then((response) => response.text());
             text += back;
-            console.log(back);
+            console.log(back.text());
             lines[line].value = text;
             
             hour += 1;
