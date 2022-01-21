@@ -10,7 +10,7 @@ String.prototype.format = function () {
 
 const getUrl = "https://vazeapi.herokuapp.com/all";
 const putUrl = "https://vazeapi.herokuapp.com/add/{0}/{1}/{2}/{3}";
-const getDayUrl = "https://vazeapi.herokuapp.com/{0}/{1}/{2}";
+const getDayUrl = "https://vazeapi.herokuapp.com/{0}/{1}";
 
 
 /*
@@ -164,8 +164,8 @@ async function getData() {
 
 
 async function retDay(lines, line, month, the, hour) {
-    let result = await fetch(getDayUrl.format(month, the, hour));
-    let activity = result;
+    let result = await fetch(getDayUrl.format(month, the));
+    let activity = result[hour];
 
     
 
