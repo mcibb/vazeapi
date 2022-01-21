@@ -10,7 +10,7 @@ String.prototype.format = function () {
 
 const getUrl = "https://vazeapi.herokuapp.com/all";
 const putUrl = "https://vazeapi.herokuapp.com/add/{0}/{1}/{2}/{3}";
-const getDayUrl = "https://vazeapi.herokuapp.com/{0}/{1}/{2}";
+const getDayUrl = "https://vazeapi.herokuapp.com/all/{0}/{1}/{2}";
 
 
 /*
