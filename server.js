@@ -71,7 +71,7 @@ function sendAll(request, response) {
     response.send(db);
 }
 
-app.get("/:month/:day/", sendAll);
+app.get("/:month/:day/:hour", sendAll);
 
 function sendAll(request, response) {
    
