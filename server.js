@@ -6,6 +6,8 @@ var fs = require("fs");
 let data = fs.readFileSync("activities.json");
 let db = JSON.parse(data);
 
+let back = JSON.parse(data);
+
 
 
 
@@ -68,7 +70,7 @@ app.get("/all", sendAll);
 function sendAll(request, response) {
     data = request.params;
     
-    response.send(db);
+    response.send(back);
 }
 
 app.get("/all/:month/:day/:hour", sendAll);
@@ -81,7 +83,7 @@ function sendAll(request, response) {
     let hour = data.hour;
     
 
-    let reply = db[month][day][hour];    
+    let reply = back[month][day][hour];    
 
 
     response.send(reply).text();
