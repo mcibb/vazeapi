@@ -166,7 +166,7 @@ async function getData() {
 async function retDay(lines, line, month, the, hour) {
     let result = await fetch(getDayUrl.format(month, the));
     
-    console.log(result.isArray());
+    console.log(result);
     let final = JSON.parse(result);
     let activity = final[hour];
     console.log(final[hour]);
