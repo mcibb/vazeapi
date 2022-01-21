@@ -1,6 +1,6 @@
 var fs = require("fs");
-var flatten = require('flat');
-var unflatten = require('flat').unflatten;
+//var flatten = require('flat');
+//var unflatten = require('flat').unflatten;
 
 
 let data = fs.readFileSync("activities.json");
@@ -60,21 +60,8 @@ function addText(request, response) {
     response.send(db);
 }
 
-app.get("/db2", sendAll);
 
-function sendAll(request, response) {
-   
-    
-    response.send(unflatten(activities));
-}
 
-app.get("/db", sendAll);
-
-function sendAll(request, response) {
-   
-    
-    response.send(showDb);
-}
 
 app.get("/all", sendAll);
 
@@ -83,6 +70,19 @@ function sendAll(request, response) {
     
     response.send(db);
 }
+
+app.get("/:month/:day", sendAll);
+
+function sendAll(request, response) {
+   
+    let data = request.params;
+    let month = data.month;
+    let day = data.day;
+
+
+    response.send(db[month][day]);
+}
+
 
 app.get("/writejson", writeJSON);
 

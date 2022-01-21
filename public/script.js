@@ -9,7 +9,8 @@ String.prototype.format = function () {
   };
 
 const getUrl = "https://vazeapi.herokuapp.com/all";
-const putUrl = "https://vazeapi.herokuapp.com/add/{0}/{1}/{2}";
+const putUrl = "https://vazeapi.herokuapp.com/add/{0}/{1}/{2}/{3}";
+const getDayUrl = "https://vazeapi.herokuapp.com/{0}/{1}}";
 
 
 /*
@@ -160,6 +161,17 @@ async function getData() {
     
 }
 
+
+
+async function retDay() {
+    let ret = await fetch(getDayUrl.format());
+    let activity = ret[i];
+
+    
+
+    lines[line].value = activity;
+}
+
 async function retDb(lines, line, hour) {
     let ret = await getData();
     let day = ret[i];
@@ -231,13 +243,13 @@ function dayPanelCreate(month, the) {
         hourLines.innerHTML += "<div class='hourLinesText' style='max-width: 5vw'>" + x + ":⁰⁰</div>";
         hourLines.innerHTML += "<input type='text' class='hourLinesText' value=' ' style='max-width: 50vw';>";
     }
-/*
+
     let lines = document.querySelectorAll(".hourLinesText");
-    let hour = 8;
+    let hour = 0;
     for (line = 1; line < lines.length; line +=2){
         
         if (isOdd(line)) {
-            retDb(lines, line, hour);
+            retDay(lines, line, hour);
             hour += 1;
         } else {
             continue;
@@ -245,21 +257,25 @@ function dayPanelCreate(month, the) {
 
         
     }
-    */
+    
     hoverTime();
     
     
     dayPanel.style.display = "grid";
     
-    close(month);
+    close(month, the);
     
 }
 
-function close(month) {
-    console.log(dayy);
-    let linesAfter = document.querySelectorAll(".hourLinesText");
+function close(month, the) {
+    console.log(month);
+    console.log(the);
+   
+    //let linesAfter = document.querySelectorAll(".hourLinesText");
     panelClose.addEventListener("click", function() {
-        
+        console.log(month);
+    console.log(the);
+         /*
         time = 8;
         for (line = 1; line < linesAfter.length; line +=2){
             
@@ -272,7 +288,7 @@ function close(month) {
             }
     
             
-        }
+        }*/
         table[0].style.transform = "none";
         table[1].style.transform = "none";
         table[2].style.transform = "none";
@@ -282,6 +298,7 @@ function close(month) {
         dayPanel.style.display = "none";
     });
 }
+
 //On click, move the month clicked on the right side, create 2/3vw wide #dayPanel
 /*
 for (let day = 0; day < dayButtons.length; day++) {
