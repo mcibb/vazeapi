@@ -79,9 +79,10 @@ function sendAll(request, response) {
     let month = data.month;
     let day = data.day;
     
+    let full = db[month][day];
 
 
-    response.send(db[month][day]);
+    response.send(full);
 }
 
 
