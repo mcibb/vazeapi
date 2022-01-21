@@ -155,8 +155,8 @@ function hoverTime() {
 
 
 async function getData(month, the, hour) {
-    let day = the-1;
-    let response = await fetch(getDayUrl.format(month, day, hour));
+    
+    let response = await fetch(getDayUrl.format(month, the-1, hour));
 
     return response;
     
@@ -169,7 +169,7 @@ async function retDay(lines, line, month, the, hour) {
     let ret = await getData(month, the, hour);
     
     console.log(ret);
-    console.log(ret.json());
+    
     lines[line].value = ret;
 }
 
