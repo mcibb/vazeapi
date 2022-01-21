@@ -79,14 +79,11 @@ function sendAll(request, response) {
     let month = data.month;
     let day = data.day;
     
-    let reply = db[month][day];
+    let reply = db[month][day];    
 
 
-    console.log(reply.json());
-    
-
-
-    return response.send(reply.json());
+    response.send(reply);
+    return reply;
     
 }
 
