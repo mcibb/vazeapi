@@ -250,7 +250,7 @@ function dayPanelCreate(month, the) {
         
         if (isOdd(line)) {
             
-            retDay(month, the, hour);
+            getData(month, the, hour);
             hour += 1;
         } else {
             continue;
