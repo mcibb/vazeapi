@@ -168,9 +168,9 @@ async function retDay(lines, line, month, the, hour) {
 
     let ret = await getData(month, the, hour);
     
-    console.log(ret.json());
+    console.log(ret.text());
     
-    lines[line].value = ret.json();
+    lines[line].value = ret.text();
 }
 
 async function retDb(lines, line, hour) {
