@@ -1,9 +1,21 @@
 var fs = require("fs");
+const util = require("util");
 //var flatten = require('flat');
 //var unflatten = require('flat').unflatten;
 
+const readFile = util.promisify(fs.readFile);
 
-let data = fs.readFile("activities.json");
+readFile("activities.json").then(result => console.log(result)).catch((err) => console.error(err));
+
+async function callReadFile() {
+    try {
+        let result = await readFile("activities.json");
+    } catch (err) {
+        console.error(err);
+    }
+}
+data = callReadFile();
+
 let db = JSON.parse(data);
 
 
