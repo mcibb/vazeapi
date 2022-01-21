@@ -158,20 +158,18 @@ async function getData(month, the, hour){
     
     let response = await fetch(getDayUrl.format(month, the, hour));
     let ret = response.text();
-    console.log(ret);
     return ret;
     
 }
 
 
 
-async function retDay(lines, line, month, the, hour) {
+async function retDay(month, the, hour) {
 
     let ret = await getData(month, the, hour);
-    let fin = ret;
     console.log(ret);
     
-    lines[line].value = ret;
+    
 }
 
 async function retDb(lines, line, hour) {
@@ -252,7 +250,7 @@ function dayPanelCreate(month, the) {
         
         if (isOdd(line)) {
             
-            getData(month, the, hour);
+            retDay(month, the, hour);
             hour += 1;
         } else {
             continue;
