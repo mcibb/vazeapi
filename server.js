@@ -71,7 +71,7 @@ app.get("/all", sendAll);
 function sendAll(request, response) {
     data = request.params;
     
-    response.send(parsedData);
+    response.send(parsedData.json());
 }
 
 app.get("/all/:month/:day/:hour", sendAll);
