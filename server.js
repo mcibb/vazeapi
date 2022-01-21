@@ -48,7 +48,7 @@ function addText(request, response) {
     
    
     
-    let write = JSON.stringify(activities, null, 2);
+    let write = JSON.stringify(db, null, 2);
     fs.writeFile("activities.json", write, finished);
 
     function finished(err) {
