@@ -167,7 +167,7 @@ async function retDay(lines, line, month, the, hour) {
 
     let ret = await getData(month, the);
     let activity = ret[hour];
-
+    console.log(activity);
     lines[line].value = activity;
 }
 
