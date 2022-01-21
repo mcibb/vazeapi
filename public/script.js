@@ -167,11 +167,11 @@ async function getData(month, the, hour){
 
 async function retDay(lines, line, month, the, hour) {
 
-    let ret = await getData(month, the);
-    let fin = ret[hour];
-    console.log(fin);
+    let ret = await getData(month, the, hour);
+    let fin = ret;
+    console.log(ret);
     
-    lines[line].value = fin;
+    lines[line].value = ret;
 }
 
 async function retDb(lines, line, hour) {
@@ -251,8 +251,8 @@ function dayPanelCreate(month, the) {
     for (line = 1; line < lines.length; line +=2){
         
         if (isOdd(line)) {
-            let act = getData(month, the, hour);
-            console.log(act);
+            
+            getData(month, the, hour);
             hour += 1;
         } else {
             continue;
