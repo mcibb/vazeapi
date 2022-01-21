@@ -86,7 +86,7 @@ function sendAll(request, response) {
     
 
 
-    response.send(reply);
+    return response.send(reply);
     
 }
 
