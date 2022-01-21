@@ -166,7 +166,7 @@ async function getData(month, the){
 
 async function retDay(lines, line, month, the, hour) {
 
-    let ret = getData(month, the);
+    let ret = await getData(month, the);
     let fin = ret[hour];
     console.log(fin);
     
