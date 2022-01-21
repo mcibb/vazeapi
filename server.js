@@ -82,11 +82,11 @@ function sendAll(request, response) {
     let reply = db[month][day];
 
 
-    console.log(reply);
+    console.log(reply.json());
     
 
 
-    return response.send(reply);
+    return response.send(reply.json());
     
 }
 
