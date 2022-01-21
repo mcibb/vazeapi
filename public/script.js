@@ -164,7 +164,7 @@ async function getData(month, the, hour) {
 
 
 
-async function retDay(lines, line, month, the, hour) {
+function retDay(lines, line, month, the, hour) {
 
     let ret = getData(month, the, hour);
     
