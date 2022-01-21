@@ -163,8 +163,8 @@ async function getData() {
 
 
 
-async function retDay() {
-    let ret = await fetch(getDayUrl.format());
+async function retDay(lines, line, month, the) {
+    let ret = await fetch(getDayUrl.format(month, the));
     let activity = ret[i];
 
     
@@ -249,7 +249,7 @@ function dayPanelCreate(month, the) {
     for (line = 1; line < lines.length; line +=2){
         
         if (isOdd(line)) {
-            retDay(lines, line, hour);
+            retDay(lines, line, month, the);
             hour += 1;
         } else {
             continue;
