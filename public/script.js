@@ -167,10 +167,10 @@ async function getData(month, the, hour) {
 async function retDay(lines, line, month, the, hour) {
 
     let ret = await getData(month, the, hour);
+    let final = ret.text(result);
+    console.log(final);
     
-    console.log(ret.text());
-    
-    lines[line].value = ret.text();
+    lines[line].value = final;
 }
 
 async function retDb(lines, line, hour) {
