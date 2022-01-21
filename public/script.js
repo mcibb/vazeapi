@@ -10,7 +10,7 @@ String.prototype.format = function () {
 
 const getUrl = "https://vazeapi.herokuapp.com/all";
 const putUrl = "https://vazeapi.herokuapp.com/add/{0}/{1}/{2}/{3}";
-const getDayUrl = "https://vazeapi.herokuapp.com/all/{0}/{1}/{2}";
+const getDayUrl = "https://vazeapi.herokuapp.com/all/{0}/{1}";
 
 
 /*
@@ -154,9 +154,9 @@ function hoverTime() {
 }}
 
 
-async function getData(month, the, hour) {
+async function getData(month, the ){
     
-    let response = await fetch(getDayUrl.format(month, the-1, hour));
+    let response = await fetch(getDayUrl.format(month, the-1));
     console.log(response);
     return response;
     
@@ -167,10 +167,10 @@ async function getData(month, the, hour) {
 async function retDay(lines, line, month, the, hour) {
 
     let ret = await getData(month, the, hour);
+    let fin = ret[hour];
+    console.log(fin);
     
-    console.log(ret);
-    
-    lines[line].value = ret;
+    lines[line].value = fin;
 }
 
 async function retDb(lines, line, hour) {
