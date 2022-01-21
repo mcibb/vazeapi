@@ -60,7 +60,7 @@ function addText(request, response) {
 
    
     
-    response.send(db);
+    response.send(file);
 }
 
 
