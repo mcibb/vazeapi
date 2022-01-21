@@ -66,7 +66,7 @@ function addText(request, response) {
 app.get("/all", sendAll);
 
 function sendAll(request, response) {
-   
+    data = request.params;
     
     response.send(db);
 }

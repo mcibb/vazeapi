@@ -166,6 +166,9 @@ async function getData() {
 async function retDay(lines, line, month, the, hour) {
     let result = await fetch(getDayUrl.format(month, the));
     let activity = result[hour];
+    console.log(result);
+    console.log(result[hour]);
+    console.log(activity);
 
     
 
@@ -271,10 +274,10 @@ function close(month, the) {
     console.log(month);
     console.log(the);
    
-    //let linesAfter = document.querySelectorAll(".hourLinesText");
+    let linesAfter = document.querySelectorAll(".hourLinesText");
     panelClose.addEventListener("click", function() {
         console.log(month);
-    console.log(the);
+        console.log(the);
          
         hour = 0;
         for (line = 1; line < linesAfter.length; line +=2){
