@@ -87,7 +87,7 @@ function sendAll(request, response) {
     let reply = parsedData[month][day][hour];    
 
 
-    response.send(reply).text();
+    response.send(reply.text());
     return reply.text();
     
 }
