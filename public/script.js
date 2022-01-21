@@ -251,7 +251,7 @@ function dayPanelCreate(month, the) {
     for (line = 1; line < lines.length; line +=2){
         
         if (isOdd(line)) {
-            retDay(lines, line, month, the, hour)
+            console.log(getData(month, the))
             hour += 1;
         } else {
             continue;
