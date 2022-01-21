@@ -81,9 +81,11 @@ function sendAll(request, response) {
     let hour = data.hour;
     
     let full = db[month][day][hour];
+    
 
 
     response.send(full);
+    return full;
 }
 
 

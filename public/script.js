@@ -158,7 +158,7 @@ async function getData(month, the, hour) {
     let day = the-1;
     let response = await fetch(getDayUrl.format(month, day, hour));
 
-    return response.json();
+    return response;
     
 }
 
@@ -269,13 +269,11 @@ function dayPanelCreate(month, the) {
 }
 
 function close(month, the) {
-    console.log(month);
-    console.log(the);
+    
    
     let linesAfter = document.querySelectorAll(".hourLinesText");
     panelClose.addEventListener("click", function() {
-        console.log(month);
-        console.log(the);
+        
         let day = the-1;
         hour = 0;
         for (line = 1; line < linesAfter.length; line +=2){
