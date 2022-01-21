@@ -279,11 +279,14 @@ function close(month, the) {
         let day = the-1;
         hour = 0;
         for (line = 1; line < linesAfter.length; line +=2){
-            
+            text = linesAfter[line].value;
             if (isOdd(line)) {
-                text = linesAfter[line].value;
+                if (text == " " || "") {
+                    continue;
+                } else {
                 fetch(putUrl.format(month, day, hour, text));
                 hour += 1;
+                }
             } else {
                 continue;
             }
