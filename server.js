@@ -68,24 +68,24 @@ app.get("/all", sendAll);
 function sendAll(request, response) {
     data = request.params;
     
-    response.send(db.stringify());
+    response.send(db);
 }
 
-app.get("/all/:month/:day/:hour", sendAll);
+app.get("/all/:month/:day/", sendAll);
 
 function sendAll(request, response) {
    
     let data = request.params;
     let month = data.month;
     let day = data.day;
-    let hour = data.hour;
+    
     
 
-    let reply = db[month][day][hour];    
+    let reply = db[month][day];    
 
 
-    response.send(reply);
-    return reply;
+    response.send(reply.stringify());
+    return reply.stringify();
     
 }
 
