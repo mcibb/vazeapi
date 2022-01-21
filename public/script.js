@@ -248,11 +248,12 @@ function dayPanelCreate(month, the) {
     let hour = 0;
     for (line = 1; line < lines.length; line +=2){
         
+        let text = " ";
         if (isOdd(line)) {
             
-            fetch(getDayUrl.format(month, the, hour))
-            .then(response => response.text())
-            .then(data => lines[line].value = data);
+            back = fetch(getDayUrl.format(month, the, hour)).then((response) => response.json());
+            text += back.text();
+            lines[line].value = text;
             
             hour += 1;
         } else {
