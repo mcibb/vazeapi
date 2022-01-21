@@ -251,8 +251,8 @@ function dayPanelCreate(month, the) {
     for (line = 1; line < lines.length; line +=2){
         
         if (isOdd(line)) {
-            let act = JSON.parse(getData(month, the-1));
-            console.log(act[the-1]);
+            let act = JSON.parse(getData(month, the));
+            console.log(act[the]);
             hour += 1;
         } else {
             continue;
