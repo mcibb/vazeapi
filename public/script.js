@@ -164,7 +164,7 @@ async function getData() {
 
 
 async function retDay(lines, line, month, the, hour) {
-    let ret = await fetch(getDayUrl.format(month, the));
+    let result = await fetch(getDayUrl.format(month, the));
     let activity = ret[hour];
 
     
@@ -249,7 +249,9 @@ function dayPanelCreate(month, the) {
     for (line = 1; line < lines.length; line +=2){
         
         if (isOdd(line)) {
-            retDay(lines, line, month, the, hour);
+            let result = await fetch(getDayUrl.format(month, the));
+            let activity = result[hour];
+            lines[line].value = activity;
             hour += 1;
         } else {
             continue;
@@ -275,20 +277,20 @@ function close(month, the) {
     panelClose.addEventListener("click", function() {
         console.log(month);
     console.log(the);
-         /*
-        time = 8;
+         
+        hour = 0;
         for (line = 1; line < linesAfter.length; line +=2){
             
             if (isOdd(line)) {
                 text = linesAfter[line].value;
-                fetch(putUrl.format(dayButtons[dayy], time, text));
-                time += 1;
+                fetch(putUrl.format(month, day, hour, text));
+                hour += 1;
             } else {
                 continue;
             }
     
             
-        }*/
+        }
         table[0].style.transform = "none";
         table[1].style.transform = "none";
         table[2].style.transform = "none";
