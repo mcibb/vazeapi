@@ -3,8 +3,7 @@ var fs = require("fs");
 //var unflatten = require('flat').unflatten;
 
 
-let data = fs.readFileSync("activities.json");
-let db = JSON.parse(data);
+
 
 
 
@@ -31,6 +30,10 @@ app.use(express.static("public"));
 app.get("/add/:month/:day/:hour/:text", addText);
 
 function addText(request, response) {
+
+    let file = fs.readFileSync("activities.json");
+    let db = JSON.parse(file);
+
     let data = request.params;
     let month = data.month;
     let day = data.day;
@@ -68,13 +71,19 @@ app.get("/all", sendAll);
 function sendAll(request, response) {
     data = request.params;
     
+    let file = fs.readFileSync("activities.json");
+    let db = JSON.parse(file);
+    
     response.send(db);
 }
 
 app.get("/:month/:day/", sendAll);
 
 function sendAll(request, response) {
-   
+
+    let file = fs.readFileSync("activities.json");
+    let db = JSON.parse(file);
+
     let data = request.params;
     let month = data.month;
     let day = data.day;
