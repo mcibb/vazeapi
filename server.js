@@ -4,8 +4,8 @@ var fs = require("fs");
 
 let parsedData;
 
-let data = fs.readFileSync("activities.json");
-let db = JSON.parse(data);
+let file = fs.readFileSync("activities.json");
+let db = JSON.parse(file);
 
 parsedData = db;
 
