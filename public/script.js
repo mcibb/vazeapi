@@ -10,7 +10,7 @@ String.prototype.format = function () {
 
 const getUrl = "https://vazeapi.herokuapp.com/all";
 const putUrl = "https://vazeapi.herokuapp.com/add/{0}/{1}/{2}/{3}";
-const getDayUrl = "https://vazeapi.herokuapp.com/{0}/{1}}";
+const getDayUrl = "https://vazeapi.herokuapp.com/{0}/{1}/{2}";
 
 
 /*
@@ -164,8 +164,8 @@ async function getData() {
 
 
 async function retDay(lines, line, month, the, hour) {
-    let result = await fetch(getDayUrl.format(month, the));
-    let activity = ret[hour];
+    let result = await fetch(getDayUrl.format(month, the, hour));
+    let activity = result;
 
     
 
@@ -249,9 +249,7 @@ function dayPanelCreate(month, the) {
     for (line = 1; line < lines.length; line +=2){
         
         if (isOdd(line)) {
-            let result = await fetch(getDayUrl.format(month, the));
-            let activity = result[hour];
-            lines[line].value = activity;
+            retDay(lines, line, month, the, hour)
             hour += 1;
         } else {
             continue;
