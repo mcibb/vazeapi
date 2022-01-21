@@ -2,18 +2,12 @@ var fs = require("fs");
 //var flatten = require('flat');
 //var unflatten = require('flat').unflatten;
 
+let parsedData;
 
-
-
-async function callReadFile() {
-    try {
-        let result = await fs.readFileSync("activities.json");
-    } catch (err) {
-        console.error(err);
-    }
-}
-let data = callReadFile();
+let data = fs.readFileSync("activities.json");
 let db = JSON.parse(data);
+
+parsedData = db;
 
 
 
@@ -77,7 +71,7 @@ app.get("/all", sendAll);
 function sendAll(request, response) {
     data = request.params;
     
-    response.send(back);
+    response.send(parsedData);
 }
 
 app.get("/all/:month/:day/:hour", sendAll);
@@ -90,7 +84,7 @@ function sendAll(request, response) {
     let hour = data.hour;
     
 
-    let reply = data[month][day][hour];    
+    let reply = parsedData[month][day][hour];    
 
 
     response.send(reply).text();
