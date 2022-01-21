@@ -3,7 +3,7 @@ var fs = require("fs");
 //var unflatten = require('flat').unflatten;
 
 
-let data = fs.readFile("activities.json");
+let data = fs.readFileSync("activities.json");
 let db = JSON.parse(data);
 
 
