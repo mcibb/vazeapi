@@ -169,7 +169,7 @@ async function retDay(lines, line, month, the, hour) {
     
     console.log(ret);
     console.log(ret.json());
-    //lines[line].value = activity;
+    lines[line].value = ret;
 }
 
 async function retDb(lines, line, hour) {
