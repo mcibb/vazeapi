@@ -60,7 +60,7 @@ function addText(request, response) {
 
    
     
-    response.send(file);
+    response.send(JSON.parse(file));
 }
 
 

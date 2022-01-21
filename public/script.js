@@ -250,7 +250,10 @@ function dayPanelCreate(month, the) {
         
         if (isOdd(line)) {
             
-            getData(month, the, hour);
+            fetch(getDayUrl.format(month, the, hour))
+            .then(response => response.text())
+            .then(data => lines[line].value = data);
+            
             hour += 1;
         } else {
             continue;
