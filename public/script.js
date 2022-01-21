@@ -276,7 +276,7 @@ function close(month, the) {
     panelClose.addEventListener("click", function() {
         console.log(month);
         console.log(the);
-         
+        let day = the-1;
         hour = 0;
         for (line = 1; line < linesAfter.length; line +=2){
             
